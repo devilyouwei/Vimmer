@@ -13,5 +13,8 @@
 ```
 cd ~
 git clone https://github.com/BlackHatdevil/Vimmer.git
+cd ~/Vimmer
+mv .vim .vimrc ~
+rm -rf ~/Vimmer
 ```
 就这么简单！打开vim看看👀不一样的变化！
