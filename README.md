@@ -6,6 +6,7 @@
 2. HTML CSS JS
 3. Jquery
 4. C／C++
+5. java
 5. Python
 6. markdown
 
@@ -16,6 +17,7 @@ git clone https://github.com/BlackHatdevil/Vimmer.git
 cd ~/Vimmer
 mv .vim .vimrc ~
 rm -rf ~/Vimmer
+打开vim输入":BundleInstall"
 ```
 就这么简单！打开vim看看👀不一样的变化！
 
@@ -29,5 +31,9 @@ rm -rf ~/Vimmer
 - 去除所有空行：F12
 - 召唤树状目录：F3
 - 召唤taglist：F9
-- 自动补全：已自动化，C－X C－O全能补全
+- 自动补全：neocomplete已自动化，tab键位是强制omni补全，也就是针对语言类库方法的补全
 - 粘贴系统剪切板内容：C－V
+
+##示例图
+[id]: http://b260.photo.store.qq.com/psb?/V11pjPt01RlWjC/USuNmb4GvzIRa2URax50K8zwrsF9*UXQ4WZrQNH*QlQ!/b/dAQBAAAAAAAA&bo=AAUgAwAAAAACAAI!
+[id]: http://a1.qpic.cn/psb?/V11pjPt01RlWjC/Lhb8yRG.yw2sgNl5l0m7hSjBaSvAOnswg1IeF7KX38Y!/b/dGgAAAAAAAAA&ek=1&kp=1&pt=0&bo=AAUgAwAAAAACAAI!&sce=50-1-1&rf=4-0
