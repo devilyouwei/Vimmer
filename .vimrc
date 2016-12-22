@@ -1,6 +1,3 @@
-"使用pathogen
-execute pathogen#infect()
-
 set sw=4
 set ts=4
 set et
@@ -310,6 +307,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'Shougo/neocomplete.vim'
 Plugin 'ervandew/supertab'
 Plugin 'OmniCppComplete'
+Plugin 'tomasr/molokai'
 "Plugin 'AutoComplPop'
 "Plugin 'winmanager'
 "Bundle 'OmniSharp/omnisharp-vim'
