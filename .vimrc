@@ -72,7 +72,7 @@ filetype indent on
 " 保存全局变量
 set viminfo+=!
 " 带有如下符号的单词不要被换行分割
-set iskeyword+=_,$,@,%,#,-
+"set iskeyword+=_,$,@,%,#,-
 
 " 字符间插入的像素行数目
 "markdown配置
@@ -273,6 +273,7 @@ autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 "autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType c set omnifunc=ccomplete#Complete
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 "把omni补全设置成tab键
 let g:SuperTabDefaultCompletionType="<C-X><C-O>" 
 
@@ -283,6 +284,13 @@ augroup VimCSS3Syntax
 augroup END
 let g:cssColorVimDoNotMessMyUpdatetime = 1
 
+let g:nodejs_complete_config = {
+            \'js_compl_fn': 'javascriptcomplete#CompleteJS',
+            \'max_node_compl_len': 15
+            \}
+"javascript html5 API补全插件
+let g:jscomplete_use = ['dom', 'html5API', 'webGL']
+let g:jscomplete_webgl_ns = 'webgl'
 "---------------------------------------关于vundle的配置 PluginInstall,插件可以直接从github同步下来---------------------------------------------------------
 filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -295,7 +303,7 @@ Plugin 'c.vim'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'gorodinskiy/vim-coloresque'
 Plugin 'mattn/emmet-vim'
-Plugin 'artur-shaik/vim-javacomplete2'
+"Plugin 'artur-shaik/vim-javacomplete2'
 Plugin 'pangloss/vim-javascript'
 Plugin 'Yggdroot/indentLine'
 Plugin 'maksimr/vim-jsbeautify'
@@ -308,6 +316,13 @@ Plugin 'Shougo/neocomplete.vim'
 Plugin 'ervandew/supertab'
 Plugin 'OmniCppComplete'
 Plugin 'tomasr/molokai'
+Plugin 'digitaltoad/vim-pug'
+Plugin 'dNitro/vim-pug-complete'
+Plugin 'itspriddle/vim-jquery'
+Plugin 'posva/vim-vue'
+Plugin 'myhere/vim-nodejs-complete'
+Plugin 'heavenshell/vim-jsdoc'
+Plugin 'isRuslan/vim-es6'
 "Plugin 'AutoComplPop'
 "Plugin 'winmanager'
 "Bundle 'OmniSharp/omnisharp-vim'
