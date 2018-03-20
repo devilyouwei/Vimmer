@@ -1,3 +1,54 @@
+"Vundle配置
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'Shougo/neco-vim'
+Plugin 'majutsushi/tagbar'
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'vim-airline/vim-airline'
+Plugin 'c.vim'
+Plugin 'hail2u/vim-css3-syntax'
+Plugin 'gorodinskiy/vim-coloresque'
+Plugin 'mattn/emmet-vim'
+Plugin 'sheerun/vim-polyglot'
+"Plugin 'artur-shaik/vim-javacomplete2'
+Plugin 'pangloss/vim-javascript'
+Plugin 'Yggdroot/indentLine'
+Plugin 'maksimr/vim-jsbeautify'
+Plugin 'othree/html5.vim'
+Plugin 'othree/javascript-libraries-syntax.vim'
+"Plugin 'drmingdrmer/xptemplate'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
+Plugin 'Shougo/neocomplete.vim'
+Plugin 'Shougo/neosnippet'
+Plugin 'Shougo/neosnippet-snippets'
+Plugin 'ervandew/supertab'
+"Plugin 'OmniCppComplete'
+Plugin 'tomasr/molokai'
+Plugin 'digitaltoad/vim-pug'
+Plugin 'dNitro/vim-pug-complete'
+Plugin 'itspriddle/vim-jquery'
+Plugin 'posva/vim-vue'
+Plugin 'myhere/vim-nodejs-complete'
+Plugin 'heavenshell/vim-jsdoc'
+Plugin 'isRuslan/vim-es6'
+Plugin 'leshill/vim-json'
+Plugin 'rhysd/vim-clang-format'
+Plugin 'geoffharcourt/vim-matchit'
+Plugin 'vim-scripts/indentpython.vim'
+"Plugin 'jelera/vim-javascript-syntax'
+"Plugin 'AutoComplPop'
+"Plugin 'winmanager'
+"Bundle 'OmniSharp/omnisharp-vim'
+"Plugin 'shawncplus/phpcomplete.vim'
+"Plugin 'OrangeT/vim-csharp'
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+syntax on
 set sw=4
 set ts=4
 set et
@@ -26,10 +77,10 @@ let g:syntastic_check_on_wq = 0
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 显示相关  
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-syntax on
 set cul "高亮光标所在行
 set cuc
 color molokai     " 设置背景主题  
+set guifont=Monaco
 set ruler           " 显示标尺  
 set showcmd         " 输入的命令显示出来，看的清楚些  
 set scrolloff=2     " 光标移动到buffer的顶部和底部时保持3行距离  
@@ -72,7 +123,7 @@ filetype indent on
 " 保存全局变量
 set viminfo+=!
 " 带有如下符号的单词不要被换行分割
-"set iskeyword+=_,$,@,%,#,-
+set iskeyword+=$,@,%,#,-,_
 
 " 字符间插入的像素行数目
 "markdown配置
@@ -116,6 +167,8 @@ func! CompileRunGcc()
     elseif &filetype == 'cs'
         exec "!mcs %"
         exec "!time mono %<.exe"
+    elseif &filetype == 'python'
+        exec "!python3 %"
     endif
 endfunc
 "C,C++的调试
@@ -236,7 +289,6 @@ augroup end
 
 
 "关于neocomplete，需要安装lua---------------------------------------------------------------------
-"-------------------------------------------------------------------------------------------------
 " Use neocomplete.
 let g:neocomplete#enable_at_startup = 1
 " Use smartcase.
@@ -266,7 +318,7 @@ endif
 " Enable omni completion.
 autocmd FileType java setlocal omnifunc=javacomplete#Complete
 autocmd FileType cs setlocal omnifunc=OmniSharp#Complete
-autocmd FileType Python set omnifunc=pythoncomplete#Complete
+autocmd FileType python set omnifunc=python3complete#Complete
 autocmd FileType JavaScript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
@@ -274,8 +326,9 @@ autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 "autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType c set omnifunc=ccomplete#Complete
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+
 "把omni补全设置成tab键
-let g:SuperTabDefaultCompletionType="<C-X><C-O>" 
+"let g:SuperTabDefaultCompletionType="<C-X><C-O>" 
 
 
 augroup VimCSS3Syntax
@@ -291,42 +344,13 @@ let g:nodejs_complete_config = {
 "javascript html5 API补全插件
 let g:jscomplete_use = ['dom', 'html5API', 'webGL']
 let g:jscomplete_webgl_ns = 'webgl'
-"---------------------------------------关于vundle的配置 PluginInstall,插件可以直接从github同步下来---------------------------------------------------------
-filetype off                  " required
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'majutsushi/tagbar'
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'vim-airline/vim-airline'
-Plugin 'c.vim'
-Plugin 'hail2u/vim-css3-syntax'
-Plugin 'gorodinskiy/vim-coloresque'
-Plugin 'mattn/emmet-vim'
-"Plugin 'artur-shaik/vim-javacomplete2'
-Plugin 'pangloss/vim-javascript'
-Plugin 'Yggdroot/indentLine'
-Plugin 'maksimr/vim-jsbeautify'
-Plugin 'othree/html5.vim'
-Plugin 'othree/javascript-libraries-syntax.vim'
-Plugin 'drmingdrmer/xptemplate'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
-Plugin 'Shougo/neocomplete.vim'
-Plugin 'ervandew/supertab'
-Plugin 'OmniCppComplete'
-Plugin 'tomasr/molokai'
-Plugin 'digitaltoad/vim-pug'
-Plugin 'dNitro/vim-pug-complete'
-Plugin 'itspriddle/vim-jquery'
-Plugin 'posva/vim-vue'
-Plugin 'myhere/vim-nodejs-complete'
-Plugin 'heavenshell/vim-jsdoc'
-Plugin 'isRuslan/vim-es6'
-"Plugin 'AutoComplPop'
-"Plugin 'winmanager'
-"Bundle 'OmniSharp/omnisharp-vim'
-"Plugin 'shawncplus/phpcomplete.vim'
-"Plugin 'OrangeT/vim-csharp'
-call vundle#end()
-filetype plugin indent on
+let g:javascript_plugin_jsdoc = 1
+
+"augroup javascript_folding
+"    au!
+"    au FileType javascript setlocal foldmethod=syntax
+"augroup END
+
+let g:better_whitespace_enabled=1
+let g:strip_whitespace_on_save=1
+
