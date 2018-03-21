@@ -35,5 +35,5 @@ rm -rf ~/Vimmer
 - 粘贴系统剪切板内容：C－V
 
 ##示例图
-[id]: http://b260.photo.store.qq.com/psb?/V11pjPt01RlWjC/USuNmb4GvzIRa2URax50K8zwrsF9*UXQ4WZrQNH*QlQ!/b/dAQBAAAAAAAA&bo=AAUgAwAAAAACAAI!
-[id]: http://a1.qpic.cn/psb?/V11pjPt01RlWjC/Lhb8yRG.yw2sgNl5l0m7hSjBaSvAOnswg1IeF7KX38Y!/b/dGgAAAAAAAAA&ek=1&kp=1&pt=0&bo=AAUgAwAAAAACAAI!&sce=50-1-1&rf=4-0
+
+![avatar](http://b260.photo.store.qq.com/psb?/V11pjPt01RlWjC/USuNmb4GvzIRa2URax50K8zwrsF9*UXQ4WZrQNH*QlQ!/b/dAQBAAAAAAAA&bo=AAUgAwAAAAACAAI!)
