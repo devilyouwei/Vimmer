@@ -48,6 +48,15 @@ Plugin 'vim-scripts/indentpython.vim'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
+if has("gui_running")
+    au GUIEnter * simalt ~x " 窗口启动时自动最大化
+    set guioptions-=m " 隐藏菜单栏
+    set guioptions-=T " 隐藏工具栏
+    set guioptions-=L " 隐藏左侧滚动条
+    set guioptions-=r " 隐藏右侧滚动条
+    set guioptions-=b " 隐藏底部滚动条
+    "set showtabline=0 " 隐藏Tab栏
+endif
 syntax on
 set sw=4
 set ts=4
@@ -80,14 +89,13 @@ let g:syntastic_check_on_wq = 0
 set cul "高亮光标所在行
 set cuc
 color molokai     " 设置背景主题  
-set guifont=Monaco
+set guifont=Monaco:h10:b
 set ruler           " 显示标尺  
 set showcmd         " 输入的命令显示出来，看的清楚些  
 set scrolloff=2     " 光标移动到buffer的顶部和底部时保持3行距离  
 set laststatus=2   " 启动显示状态行(1),总是显示状态行(2)  
 "set foldenable      " 允许折叠  
 "set foldmethod=manual   " 手动折叠  
-set nocompatible  "去掉讨厌的有关vi一致性模式，避免以前版本的一些bug和局限  
 set cursorline              " 突出显示当前行
 set magic                   " 设置魔术
 " 自动缩进
@@ -113,7 +121,7 @@ set incsearch
 set langmenu=zh_CN.UTF-8
 set helplang=cn
 " 总是显示状态行
-set cmdheight=2
+set cmdheight=1
 " 侦测文件类型
 filetype on
 " 载入文件类型插件
@@ -229,6 +237,7 @@ set autowrite
 " 在处理未保存或只读文件的时候，弹出确认
 set confirm
 "禁止生成临时文件
+set noundofile
 set nobackup
 set noswapfile
 "搜索忽略大小写
@@ -353,4 +362,3 @@ let g:javascript_plugin_jsdoc = 1
 
 let g:better_whitespace_enabled=1
 let g:strip_whitespace_on_save=1
-
