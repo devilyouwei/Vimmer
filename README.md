@@ -2,7 +2,7 @@
 
 强大而轻量级的vim配置文件，让你的vim成为IDE，特别适合Web开发者使用
 
-## 以下语言均适用，按体验等级划分：
+## 以下环境开发均适用：
 
 1. php
 2. HTML CSS JS
@@ -18,10 +18,18 @@
 git clone https://github.com/devilyouwei/Vimmer.git
 ```
 2. 拷贝_vimrc至用户目录（windows）
-3. 安装字体：将fonts目录下monaco.ttf移至c:/windows/Fonts下
-4. 安装vundle：先切换至windows用户目录
+3. 拷贝.eslintrc.json至用户目录
+4. 安装node.js
+5. 安装字体：将fonts目录下monaco.ttf移至c:/windows/Fonts下
+6. 安装vundle：先切换至windows用户目录
 git clone https://github.com/VundleVim/Vundle.vim.git .vim/bundle/Vundle.vim
-5. 进入vim运行vundleInstall
+7. 进入vim运行vundleInstall
+8. 安装eslint可以对js代码进行分析纠错，cmd运行：
+npm install -g eslint
+npm install -g eslint-plugin-standard
+npm install -g eslint-plugin-promise
+npm install -g eslint-config-standard
+
 
 就这么简单！打开vim看看👀不一样的变化！
 
@@ -46,3 +54,6 @@ git clone https://github.com/VundleVim/Vundle.vim.git .vim/bundle/Vundle.vim
 - windows的快捷键，复制粘贴使用c-c，c-v
 
 ## 示例图
+![这里写图片描述](https://img-blog.csdn.net/20180607202424771?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTQ0NjYxMDk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+
+![这里写图片描述](https://img-blog.csdn.net/20180607202439802?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTQ0NjYxMDk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
