@@ -56,6 +56,7 @@ npm install -g eslint-config-standard
 - windows的快捷键，复制粘贴使用c-c，c-v
 
 ## 示例图
+
 ![这里写图片描述](https://img-blog.csdn.net/20180607202424771?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTQ0NjYxMDk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
 
 ![这里写图片描述](https://img-blog.csdn.net/20180607202439802?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTQ0NjYxMDk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
