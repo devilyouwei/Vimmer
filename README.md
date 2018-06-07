@@ -25,11 +25,13 @@ git clone https://github.com/devilyouwei/Vimmer.git
 git clone https://github.com/VundleVim/Vundle.vim.git .vim/bundle/Vundle.vim
 7. 进入vim运行vundleInstall
 8. 安装eslint可以对js代码进行分析纠错，cmd运行：
+
+```
 npm install -g eslint
 npm install -g eslint-plugin-standard
 npm install -g eslint-plugin-promise
 npm install -g eslint-config-standard
-
+```
 
 就这么简单！打开vim看看👀不一样的变化！
 
