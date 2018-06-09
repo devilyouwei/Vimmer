@@ -28,6 +28,8 @@ git clone https://github.com/VundleVim/Vundle.vim.git .vim/bundle/Vundle.vim
 
 ```
 npm install -g eslint
+npm install -g eslint-plugin-react@latest
+npm install -g babel-eslint
 npm install -g eslint-plugin-standard
 npm install -g eslint-plugin-promise
 npm install -g eslint-config-standard
