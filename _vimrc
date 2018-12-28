@@ -31,7 +31,14 @@ Plugin 'ervandew/supertab'
 "Plugin 'OmniCppComplete' 
 "Plugin 'othree/jspc.vim'
 Plugin '1995eaton/vim-better-javascript-completion'
-Plugin 'tomasr/molokai' 
+Plugin 'tomasr/molokai'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'HerringtonDarkholme/yats.vim'
+Plugin 'Quramy/tsuquyomi'
+Plugin 'mhartington/vim-typings'
+Plugin 'Quramy/vim-js-pretty-template'
+Plugin 'jason0x43/vim-js-indent'
+Plugin 'Quramy/vim-dtsm'
 "Plugin 'digitaltoad/vim-pug' 
 "Plugin 'dNitro/vim-pug-complete' 
 "Plugin 'itspriddle/vim-jquery'
@@ -159,16 +166,16 @@ func! CompileRunGcc()
     exec "w"
     if &filetype == 'c'
         exec "!gcc % -o %<"
-        exec "!time ./%<"
+        exec "! %<.exe"
     elseif &filetype == 'cpp'
         exec "!g++ % -o %<"
-        exec "!time ./%<"
+        exec "! %<.exe"
     elseif &filetype == 'java' 
         exec "!javac %" 
-        exec "!time java %<"
+        exec "!java %<"
     elseif &filetype == 'cs'
         exec "!mcs %"
-        exec "!time mono %<.exe"
+        exec "!mono %<.exe"
     elseif &filetype == 'python'
         exec "!python3 %"
     endif
@@ -276,6 +283,9 @@ autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 "autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType c set omnifunc=ccomplete#Complete
 
+autocmd FileType vue syntax sync fromstart
+let g:vue_disable_pre_processors=1
+
 
 "把omni补全设置成tab键
 "let g:SuperTabDefaultCompletionType="<C-X><C-O>" 
@@ -346,3 +356,11 @@ let g:closetag_shortcut = '>'
 let g:closetag_close_shortcut = '<leader>>'
 
 filetype plugin indent on    " required
+
+"-----------------typescript设置----------------
+let g:tsuquyomi_completion_detail = 1
+autocmd FileType typescript setlocal completeopt+=menu,preview
+let g:tsuquyomi_disable_quickfix = 1
+let g:syntastic_typescript_checkers = ['tsuquyomi'] " You shouldn't use 'tsc' checker.
+set ballooneval
+autocmd FileType typescript setlocal balloonexpr=tsuquyomi#balloonexpr()
