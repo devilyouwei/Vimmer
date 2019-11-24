@@ -1,7 +1,8 @@
-# Vimmer——专为windows用户设计的vim配置，精简优雅
-# Vimmer--focus on vim users on windows operating system, simple and cool
+# Vimmer——专为windows用户设计的vim配置，精简优雅, Linux也可以使用哦
+# Vimmer--Configuration focus on vim users on windows operating system, simple and cool, It also works well on Linux
 
 强大而轻量级的vim配置文件，让你的vim成为IDE，特别适合Web开发者使用
+
 Powerful but minimize vim config file, make your vim like a simple IDE, it is especially suitable for web developers.
 
 ## 以下环境开发均适用：
@@ -16,18 +17,28 @@ Powerful but minimize vim config file, make your vim like a simple IDE, it is es
 ## 安装方法：
 ## Quick start
 
-1. 下载该项目 Clone this project
+1. 下载该项目
+Clone this project
 ```
 git clone https://github.com/devilyouwei/Vimmer.git
 ```
-2. 拷贝_vimrc至用户目录（windows） Copy vimrc to user directory
-3. 拷贝.eslintrc.json至用户目录 Copy .eslintrc.json to user directory
-4. 安装node.js Install node js
-5. 安装字体：将fonts目录下monaco.ttf移至c:/windows/Fonts下 Install font monaco, just move it to 'C:\windows\Fonts\'
-6. 安装vundle：先切换至windows用户目录 Install vundle, first you need to cd to user directory and then execute the following cmd.
+2. 拷贝_vimrc至用户目录（windows）
+Copy vimrc to user directory
+3. 拷贝.eslintrc.json至用户目录
+Copy .eslintrc.json to user directory
+4. 安装node.js
+Install node js
+5. 安装字体：将fonts目录下monaco.ttf移至c:/windows/Fonts下
+Install font monaco, just move it to 'C:\windows\Fonts\'
+6. 安装vundle：先切换至windows用户目录
+Install vundle, first you need to cd to user directory and then execute the following cmd.
+```
 git clone https://github.com/VundleVim/Vundle.vim.git .vim/bundle/Vundle.vim
-7. 进入vim运行vundleInstall Open vim and execute vundleInstall
-8. 安装eslint可以对js代码进行分析纠错，cmd运行如下命令 If you want to use eslint to check your js code, you need to execute the following cmd.
+```
+7. 进入vim运行
+vundleInstall Open vim and execute vundleInstall
+8. 安装eslint可以对js代码进行分析纠错，cmd运行如下命令
+If you want to use eslint to check your js code, you need to execute the following cmd.
 
 ```
 npm install -g eslint
@@ -39,6 +50,8 @@ npm install -g eslint-config-standard
 ```
 
 就这么简单！打开vim看看👀不一样的变化！
+
+It's so easy, now open your vim again and try it.
 
 ## 注意事项
 
