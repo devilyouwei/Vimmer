@@ -8,6 +8,8 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'vim-airline/vim-airline'
+Plugin 'beanworks/vim-phpfmt'
+Plugin 'ryanoasis/vim-devicons'
 Plugin 'c.vim'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'mattn/emmet-vim'
@@ -20,6 +22,8 @@ Plugin 'othree/html5.vim'
 Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'sickill/vim-monokai'
 Plugin 'scrooloose/nerdtree'
+Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'scrooloose/syntastic'
 Plugin 'Shougo/neocomplete.vim'
 Plugin 'Shougo/neosnippet'
@@ -238,9 +242,9 @@ set completeopt=longest,menu
 
 "set tags=tags
 set autochdir "输出时只有文件名，不带./ ../等目录前缀(默认了执行％在当前的目录下)
-set termencoding=utf-8
-set encoding=utf8
-set fileencodings=utf8,ucs-bom,gbk,cp936,gb2312,gb18030
+set termencoding=UTF-8
+set encoding=UTF-8
+set fileencodings=utf-8,ucs-bom,gbk,cp936,gb2312,gb18030
 
 
 "关于neocomplete，需要安装lua---------------------------------------------------------------------
