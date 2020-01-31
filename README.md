@@ -1,11 +1,11 @@
-# Vimmer——专为windows用户设计的vim配置，精简优雅, Linux也可以使用哦
 # Vimmer--Configuration focus on vim users on windows operating system, simple and cool, It also works well on Linux
+
+Vimmer——专为windows用户设计的vim配置，精简优雅, Linux也可以使用哦
 
 强大而轻量级的vim配置文件，让你的vim成为IDE，特别适合Web开发者使用
 
 Powerful but minimize vim config file, make your vim like a simple IDE, it is especially suitable for web developers.
 
-## 以下环境开发均适用：
 ## Apply to
 
 1. php
@@ -14,7 +14,6 @@ Powerful but minimize vim config file, make your vim like a simple IDE, it is es
 4. Python
 5. vue
 
-## 安装方法：
 ## Quick start
 
 1. 下载该项目
@@ -33,7 +32,9 @@ Install font monaco, just move it to 'C:\windows\Fonts\'
 6. 安装vundle：先切换至windows用户目录
 Install vundle, first you need to cd to user directory and then execute the following cmd.
 ```
-git clone https://github.com/VundleVim/Vundle.vim.git .vim/bundle/Vundle.vim
+git clone https://github.com/VundleVim/Vundle.vim.git .vim/bundle/Vundle.vim // Windows, you need to move .vim to Users' home dir
+
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim // Linux
 ```
 7. 进入vim运行
 vundleInstall Open vim and execute vundleInstall
@@ -51,14 +52,25 @@ npm install -g eslint-config-standard
 
 就这么简单！打开vim看看👀不一样的变化！
 
-It's so easy, now open your vim again and try it.
 
-## 注意事项
+## Issues
 
-由于本vim配置了neocomplete作为自动补全工具，neocomplete补全能力强大，且性能良好，缺点是需要使用到lua.dll，者必须在vim编译过程加入，糟糕的是官方的gvim for windows并没有编译python和lua模块，所以将无法使用，如下介绍两个方法：
+由于本vim配置了neocomplete作为自动补全工具，neocomplete补全能力强大，且性能良好，缺点是需要使用到lua.dll，这必须在vim编译过程加入，糟糕的是官方的gvim for windows并没有编译python和lua模块，所以将无法使用，如下介绍两个方法：
 
 1. 进入vimrc配置，注释掉neocomplete，并去除autocompl前面的注释，这样使用autocompl不需要任何多余模块，可自动补全。
 2. 下载已经编译了lua和python模块的gvim版本，注意就是该项目目录下的：gvim_full，将其解压后复制到Programs或其他您习惯的软件安装目录下。然后为gvim添加右击菜单编辑功能，具体步骤参考博客：http://www.cnblogs.com/devilyouwei/p/9152377.html
+
+在操作系统中，很多特殊字体是没有的，例如一些文件logo等，这些问题会在NerdTree和poweline中导致乱码，选装相应的字体
+
+3. NerdTree的字体乱码，这是因为没有安装Nerd-font，参考[https://github.com/ryanoasis/nerd-fonts](https://github.com/ryanoasis/nerd-fonts)
+
+4. Ubuntu终端下，安装完nerd font之后需要在首选项中选择带有nerd的字体，才能显示各种文件的小logo
+
+5. Ubuntu下没有lua的vim怎么办？安装vim-nox
+
+```
+sudo apt install vim-nox
+```
 
 ## 操作方法：
 
@@ -75,6 +87,10 @@ It's so easy, now open your vim again and try it.
 
 ## 示例图
 
-![这里写图片描述](https://img-blog.csdn.net/20180607202424771?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTQ0NjYxMDk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20200131123650515.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTQ0NjYxMDk=,size_16,color_FFFFFF,t_70)
 
-![这里写图片描述](https://img-blog.csdn.net/20180607202439802?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTQ0NjYxMDk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20200131123934284.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTQ0NjYxMDk=,size_16,color_FFFFFF,t_70)
+
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20200131124320930.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTQ0NjYxMDk=,size_16,color_FFFFFF,t_70)
+
+![在这里插入图片描述](https://github-devilyouwei.oss-us-west-1.aliyuncs.com/vimmer/vimmer.gif)

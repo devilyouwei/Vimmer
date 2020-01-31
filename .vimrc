@@ -17,6 +17,7 @@ Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'pangloss/vim-javascript'
 "Plugin 'alvan/vim-closetag'
 Plugin 'Yggdroot/indentLine'
+Plugin 'udalov/kotlin-vim'
 Plugin 'maksimr/vim-jsbeautify'
 Plugin 'othree/html5.vim'
 Plugin 'othree/javascript-libraries-syntax.vim'
@@ -177,6 +178,9 @@ func! CompileRunGcc()
     elseif &filetype == 'java' 
         exec "!javac %" 
         exec "!java %<"
+    elseif &filetype == 'kotlin' 
+        exec "!kotlinc-native % -o %<" 
+        exec "! ./%<"
     elseif &filetype == 'cs'
         exec "!mcs %"
         exec "!mono %<.exe"
