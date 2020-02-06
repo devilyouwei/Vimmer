@@ -1,8 +1,8 @@
-# Vimmer--Configuration focus on vim users on windows operating system, simple and cool, It also works well on Linux
+# Vimmer--Simple and Fast Vim
 
-Vimmer——专为windows用户设计的vim配置，精简优雅, Linux也可以使用哦
+Vimmer—-精简高效的vim配置
 
-强大而轻量级的vim配置文件，让你的vim成为IDE，特别适合Web开发者使用
+强大而轻量的vim配置文件，让你的vim成为精简的IDE，特别适合Web开发者使用
 
 Powerful but minimize vim config file, make your vim like a simple IDE, it is especially suitable for web developers.
 
@@ -12,7 +12,8 @@ Powerful but minimize vim config file, make your vim like a simple IDE, it is es
 2. c
 3. HTML CSS JS
 4. Python
-5. vue
+5. TypeScript
+6. vue
 
 ## Quick start
 
@@ -27,7 +28,7 @@ Copy vimrc to user directory
 Copy .eslintrc.json to user directory
 4. 安装node.js
 Install node js
-5. 安装字体：将fonts目录下monaco.ttf移至c:/windows/Fonts下
+5. 安装字体：将fonts目录下所有字体移至c:/windows/Fonts下或者在linux安装
 Install font monaco, just move it to 'C:\windows\Fonts\'
 6. 安装vundle：先切换至windows用户目录
 Install vundle, first you need to cd to user directory and then execute the following cmd.
