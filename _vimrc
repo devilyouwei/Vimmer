@@ -8,20 +8,23 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'vim-airline/vim-airline'
-"Plugin 'c.vim'
-"Plugin 'hail2u/vim-css3-syntax'
-"Plugin 'gorodinskiy/vim-coloresque'
+"Plugin 'beanworks/vim-phpfmt'
+Plugin 'ryanoasis/vim-devicons'
+Plugin 'c.vim'
+Plugin 'hail2u/vim-css3-syntax'
 Plugin 'mattn/emmet-vim'
-"Plugin 'sheerun/vim-polyglot'
-"Plugin 'artur-shaik/vim-javacomplete2'
+Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'pangloss/vim-javascript'
-"Plugin 'alvan/vim-closetag'
+Plugin 'alvan/vim-closetag'
 Plugin 'Yggdroot/indentLine'
+Plugin 'udalov/kotlin-vim'
 Plugin 'maksimr/vim-jsbeautify'
 Plugin 'othree/html5.vim'
 Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'sickill/vim-monokai'
 Plugin 'scrooloose/nerdtree'
+Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'scrooloose/syntastic'
 Plugin 'Shougo/neocomplete.vim'
 Plugin 'Shougo/neosnippet'
@@ -54,7 +57,9 @@ Plugin 'leshill/vim-json'
 Plugin 'vim-scripts/matchit.zip'
 "Plugin 'vim-scripts/indentpython.vim'
 Plugin 'jelera/vim-javascript-syntax'
-Plugin 'AutoComplPop'
+Plugin 'tpope/vim-haml'
+"Plugin 'gko/vim-coloresque'
+"Plugin 'AutoComplPop'
 "Bundle 'OmniSharp/omnisharp-vim'
 "Plugin 'shawncplus/phpcomplete.vim'
 "Plugin 'mxw/vim-jsx'
@@ -68,9 +73,10 @@ if has("gui_running")
     set guioptions-=L " 隐藏左侧滚动条
     set guioptions-=r " 隐藏右侧滚动条
     set guioptions-=b " 隐藏底部滚动条
-    "set showtabline=0 " 隐藏Tab栏
+    set showtabline=0 " 隐藏Tab栏
 endif
 
+filetype on
 syntax on
 set sw=4
 set ts=4
@@ -102,7 +108,7 @@ let g:syntastic_javascript_checkers = ['eslint']
 set cul "高亮光标所在行
 set cuc
 color molokai     " 设置背景主题  
-set guifont=Monaco:h14:b
+set guifont=CodeNewRoman_NF:h15
 set ruler           " 显示标尺  
 set showcmd         " 输入的命令显示出来，看的清楚些  
 set scrolloff=2     " 光标移动到buffer的顶部和底部时保持3行距离  
@@ -141,8 +147,6 @@ set viminfo+=!
 set iskeyword+=$,@,%,#,-,_
 
 
-
-
 "快捷键配置----------------------------------------------------------------------------
 map <S-Left> :tabp<CR>
 map <S-Right> :tabn<CR>
@@ -173,6 +177,9 @@ func! CompileRunGcc()
     elseif &filetype == 'java' 
         exec "!javac %" 
         exec "!java %<"
+    elseif &filetype == 'kotlin'
+        exec "!kotlinc % -o %<"
+        exec "! %<.exe"
     elseif &filetype == 'cs'
         exec "!mcs %"
         exec "!mono %<.exe"
@@ -280,7 +287,7 @@ autocmd FileType JavaScript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
-"autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType c set omnifunc=ccomplete#Complete
 
 autocmd FileType vue syntax sync fromstart
@@ -306,7 +313,7 @@ nmap <C-S> :update<CR>
 "css配色插件---------------------------------------------------------------
 augroup VimCSS3Syntax
     autocmd!
-    autocmd FileType css setlocal iskeyword+=-
+    autocmd FileType css,html,vue setlocal iskeyword+=-
 augroup END
 let g:cssColorVimDoNotMessMyUpdatetime = 1
 
