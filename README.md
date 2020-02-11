@@ -19,7 +19,7 @@ Powerful but minimize vim config file, make your vim like a simple IDE, it is es
 
 1. 下载该项目
 Clone this project
-```
+```bash
 git clone https://github.com/devilyouwei/Vimmer.git
 ```
 2. 拷贝_vimrc至用户目录（windows）
@@ -32,7 +32,7 @@ Install node js
 Install font monaco, just move it to 'C:\windows\Fonts\'
 6. 安装vundle：先切换至windows用户目录
 Install vundle, first you need to cd to user directory and then execute the following cmd.
-```
+```bash
 git clone https://github.com/VundleVim/Vundle.vim.git .vim/bundle/Vundle.vim // Windows, you need to move .vim to Users' home dir
 
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim // Linux
@@ -42,7 +42,7 @@ vundleInstall Open vim and execute vundleInstall
 8. 安装eslint可以对js代码进行分析纠错，cmd运行如下命令
 If you want to use eslint to check your js code, you need to execute the following cmd.
 
-```
+```bash
 npm install -g eslint
 npm install -g eslint-plugin-react@latest
 npm install -g babel-eslint
@@ -64,7 +64,7 @@ npm install -g eslint-config-standard
 
 2. Ubuntu下没有lua的vim怎么办？安装vim-nox
 
-```
+```bash
 sudo apt install vim-nox
 ```
 
