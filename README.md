@@ -10,7 +10,7 @@ I am so sorry that I have moved my editor from Vim to NeoVim, Vimmer will also b
 
 I recommend NeoVim, please use NVimmer to config your NeoVim as here 'Vimmer for vim'.
 
-[https://github.com/devilyouwei/NVimmer]('https://github.com/devilyouwei/NVimmer')
+[https://github.com/devilyouwei/NVimmer](https://github.com/devilyouwei/NVimmer)
 
 ## Apply to
 
@@ -113,7 +113,7 @@ NeoVim 比 Vim 更年轻，更快速，更多插件支持。
 
 请参考我的新版 Vimmer——NVimmer
 
-[https://github.com/devilyouwei/NVimmer]('https://github.com/devilyouwei/NVimmer')
+[https://github.com/devilyouwei/NVimmer](https://github.com/devilyouwei/NVimmer)
 
 ## 适用于
 
