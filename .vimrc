@@ -1,70 +1,98 @@
-"Vundle配置
 set nocompatible
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-"Plugin 'Shougo/neco-vim'
-Plugin 'majutsushi/tagbar'
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'vim-airline/vim-airline'
-Plugin 'beanworks/vim-phpfmt'
-Plugin 'ryanoasis/vim-devicons'
-Plugin 'c.vim'
-Plugin 'hail2u/vim-css3-syntax'
-Plugin 'mattn/emmet-vim'
-Plugin 'cakebaker/scss-syntax.vim'
-Plugin 'pangloss/vim-javascript'
-Plugin 'alvan/vim-closetag'
-Plugin 'Yggdroot/indentLine'
-Plugin 'udalov/kotlin-vim'
-Plugin 'maksimr/vim-jsbeautify'
-Plugin 'othree/html5.vim'
-Plugin 'othree/javascript-libraries-syntax.vim'
-Plugin 'sickill/vim-monokai'
-Plugin 'scrooloose/nerdtree'
-Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'scrooloose/syntastic'
-Plugin 'Shougo/neocomplete.vim'
-Plugin 'Shougo/neosnippet'
-Plugin 'Shougo/neosnippet-snippets'
-Plugin 'chemzqm/wxapp.vim'
-Plugin 'ervandew/supertab'
-"Plugin 'OmniCppComplete' 
-"Plugin 'othree/jspc.vim'
-Plugin '1995eaton/vim-better-javascript-completion'
-Plugin 'tomasr/molokai'
-Plugin 'leafgarland/typescript-vim'
-Plugin 'HerringtonDarkholme/yats.vim'
-Plugin 'Quramy/tsuquyomi'
-Plugin 'mhartington/vim-typings'
-Plugin 'Quramy/vim-js-pretty-template'
-Plugin 'jason0x43/vim-js-indent'
-Plugin 'Quramy/vim-dtsm'
-"Plugin 'digitaltoad/vim-pug' 
-"Plugin 'dNitro/vim-pug-complete' 
-"Plugin 'itspriddle/vim-jquery'
-Plugin 'posva/vim-vue'
-Plugin 'myhere/vim-nodejs-complete'
-"Plugin 'heavenshell/vim-jsdoc'
-Plugin 'isRuslan/vim-es6'
-Plugin 'millermedeiros/vim-esformatter'
-Plugin 'mtscout6/syntastic-local-eslint.vim'
-"Plugin 'ruanyl/vim-fixmyjs'
-Plugin 'leshill/vim-json'
-"Plugin 'rhysd/vim-clang-format'
-Plugin 'vim-scripts/matchit.zip'
-"Plugin 'vim-scripts/indentpython.vim'
-Plugin 'jelera/vim-javascript-syntax'
-Plugin 'tpope/vim-haml'
-"Plugin 'gko/vim-coloresque'
-"Plugin 'AutoComplPop'
-"Bundle 'OmniSharp/omnisharp-vim'
-"Plugin 'shawncplus/phpcomplete.vim'
-"Plugin 'mxw/vim-jsx'
-"Plugin 'ternjs/tern_for_vim'
-call vundle#end()            " required
+"Vim-Plug配置
+call plug#begin('~/.vim/plugged')
+Plug 'Shougo/neco-vim'
+Plug 'majutsushi/tagbar', {'on':'TagbarToggle'}
+Plug 'prettier/vim-prettier', {'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
+let g:prettier#config#tab_width = 4
+Plug 'jiangmiao/auto-pairs'
+Plug 'artur-shaik/vim-javacomplete2',{'for':'java'}
+Plug 'vim-airline/vim-airline'
+Plug 'beanworks/vim-phpfmt'
+Plug 'ryanoasis/vim-devicons'
+Plug 'hail2u/vim-css3-syntax'
+Plug 'mattn/emmet-vim'
+Plug 'cakebaker/scss-syntax.vim'
+Plug 'pangloss/vim-javascript'
+Plug 'alvan/vim-closetag'
+Plug 'Yggdroot/indentLine'
+Plug 'udalov/kotlin-vim', {'for':'kotlin'}
+Plug 'maksimr/vim-jsbeautify'
+Plug 'othree/html5.vim'
+Plug 'othree/javascript-libraries-syntax.vim'
+Plug 'sickill/vim-monokai'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight', { 'on': 'NERDTreeToggle' }
+Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }
+Plug 'scrooloose/syntastic'
+Plug 'Shougo/neocomplete.vim'
+Plug 'Shougo/neosnippet'
+Plug 'Shougo/neosnippet-snippets'
+Plug 'chemzqm/wxapp.vim', {'for':['wxml','wxss','js']}
+Plug 'ervandew/supertab'
+"Plug 'OmniCppComplete' 
+"Plug 'othree/jspc.vim'
+Plug '1995eaton/vim-better-javascript-completion'
+Plug 'tomasr/molokai'
+Plug 'leafgarland/typescript-vim'
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'Quramy/tsuquyomi'
+Plug 'mhartington/vim-typings'
+Plug 'Quramy/vim-js-pretty-template'
+Plug 'jason0x43/vim-js-indent'
+Plug 'Quramy/vim-dtsm'
+"Plug 'digitaltoad/vim-pug' 
+"Plug 'dNitro/vim-pug-complete' 
+"Plug 'itspriddle/vim-jquery'
+Plug 'posva/vim-vue'
+Plug 'myhere/vim-nodejs-complete'
+"Plug 'heavenshell/vim-jsdoc'
+Plug 'isRuslan/vim-es6'
+Plug 'millermedeiros/vim-esformatter'
+Plug 'mtscout6/syntastic-local-eslint.vim', {'for':'javascript'}
+"Plug 'ruanyl/vim-fixmyjs'
+Plug 'leshill/vim-json', {'for':'json'}
+Plug 'rhysd/vim-clang-format', {'for':['c','cpp']}
+Plug 'vim-scripts/matchit.zip'
+"Plug 'vim-scripts/indentpython.vim'
+Plug 'jelera/vim-javascript-syntax'
+Plug 'tpope/vim-haml'
+"Plug 'AutoComplPop'
+Plug 'OmniSharp/omnisharp-vim'
+let g:OmniSharp_server_use_mono = 1
+Plug 'shawncplus/phpcomplete.vim', {'for':'php'}
+"Plug 'mxw/vim-jsx', {'for':'jsx'}
+"彩虹括号
+Plug 'kien/rainbow_parentheses.vim'
+let g:rbpt_colorpairs = [
+            \ ['brown', 'RoyalBlue3'],
+            \ ['Darkblue', 'SeaGreen3'],
+            \ ['darkgray', 'DarkOrchid3'],
+            \ ['darkgreen', 'firebrick3'],
+            \ ['darkcyan', 'RoyalBlue3'],
+            \ ['darkred', 'SeaGreen3'],
+            \ ['darkmagenta', 'DarkOrchid3'],
+            \ ['brown', 'firebrick3'],
+            \ ['gray', 'RoyalBlue3'],
+            \ ['black', 'SeaGreen3'],
+            \ ['darkmagenta', 'DarkOrchid3'],
+            \ ['Darkblue', 'firebrick3'],
+            \ ['darkgreen', 'RoyalBlue3'],
+            \ ['darkcyan', 'SeaGreen3'],
+            \ ['darkred', 'DarkOrchid3'],
+            \ ['red', 'firebrick3'],
+            \ ]
+let g:rbpt_max = 8
+let g:rbpt_loadcmd_toggle = 0
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+au Syntax * RainbowParenthesesLoadChevrons
+call plug#end()
+
+filetype on
+
 
 if has("gui_running")
     au GUIEnter * simalt ~x " 窗口启动时自动最大化
@@ -156,8 +184,11 @@ let g:airline#extensions#tabline#enabled = 1
 "set clipboard=unnamed
 "去空行  
 nnoremap <F2> :g/^\s*$/d<CR> 
-"代码格式化插件
+
+"代码格式化
 noremap <F12> gg=G
+autocmd FileType javascript,typescript,css,less,scss,json,graphql,markdown,vue,yaml,html noremap <F12> :Prettier<CR>
+
 "html标签自动补全
 map! <C-O> <C-Y>,
 "列出当前目录文件  
@@ -165,9 +196,10 @@ map <F3> :NERDTreeToggle<CR>
 imap <F3> <ESC> :NERDTreeToggle<CR>
 "tagbar
 nmap <F9> :TagbarToggle<CR>
+map <F5> :w<CR>
 "C，C++ 按F5编译运行
-map <F5> :call CompileRunGcc()<CR>
-func! CompileRunGcc()
+map <F6> :call Compile()<CR>
+func! Compile()
     exec "w"
     if &filetype == 'c'
         exec "!gcc % -o %<"
@@ -186,6 +218,8 @@ func! CompileRunGcc()
         exec "!mono %<.exe"
     elseif &filetype == 'python'
         exec "!python3 %"
+    elseif &filetype == 'javascript'
+        exec "!node %"
     endif
 endfunc
 
@@ -274,9 +308,9 @@ if !exists('g:neocomplete#sources#omni#input_patterns')
     let g:neocomplete#sources#omni#input_patterns = {}
 endif
 
-"let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
-"let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:]*\t]\%(\.\|->\)'
-"let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:]*\t]\%(\.\|->\)\|\h\w*::'
+let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:]*\t]\%(\.\|->\)'
+let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:]*\t]\%(\.\|->\)\|\h\w*::'
 
 
 
@@ -288,7 +322,7 @@ autocmd FileType JavaScript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
-"autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType c set omnifunc=ccomplete#Complete
 autocmd FileType vue syntax sync fromstart
 

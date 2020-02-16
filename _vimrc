@@ -26,9 +26,9 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'scrooloose/syntastic'
-Plugin 'Shougo/neocomplete.vim'
-Plugin 'Shougo/neosnippet'
-Plugin 'Shougo/neosnippet-snippets'
+"Plugin 'Shougo/neocomplete.vim'
+"Plugin 'Shougo/neosnippet'
+"Plugin 'Shougo/neosnippet-snippets'
 Plugin 'chemzqm/wxapp.vim'
 Plugin 'ervandew/supertab'
 "Plugin 'OmniCppComplete' 
@@ -59,9 +59,9 @@ Plugin 'vim-scripts/matchit.zip'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'tpope/vim-haml'
 "Plugin 'gko/vim-coloresque'
-"Plugin 'AutoComplPop'
+Plugin 'AutoComplPop'
 "Bundle 'OmniSharp/omnisharp-vim'
-"Plugin 'shawncplus/phpcomplete.vim'
+Plugin 'shawncplus/phpcomplete.vim'
 "Plugin 'mxw/vim-jsx'
 "Plugin 'ternjs/tern_for_vim'
 call vundle#end()            " required
@@ -249,36 +249,6 @@ set termencoding=utf-8
 set encoding=utf8
 set fileencodings=utf8,ucs-bom,gbk,cp936,gb2312,gb18030
 
-
-"关于neocomplete，需要安装lua---------------------------------------------------------------------
-" Use neocomplete.
-let g:neocomplete#enable_at_startup = 1
-" Use smartcase.
-let g:neocomplete#enable_smart_case = 1
-" Set minimum syntax keyword length
-let g:neocomplete#sources#syntax#min_keyword_length = 3
-let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
-" AutoComplPop like behavior.
-let g:neocomplete#enable_auto_select = 1
-" Define keyword.
-if !exists('g:neocomplete#keyword_patterns')
-    let g:neocomplete#keyword_patterns = {}
-endif
-let g:neocomplete#keyword_patterns['default'] = '\h\w*'
-" Plugin key-mappings.
-inoremap <expr><C-g>     neocomplete#undo_completion()
-inoremap <expr><C-l>     neocomplete#complete_common_string()
-" Enable heavy omni completion.
-if !exists('g:neocomplete#sources#omni#input_patterns')
-    let g:neocomplete#sources#omni#input_patterns = {}
-endif
-
-"let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
-"let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:]*\t]\%(\.\|->\)'
-"let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:]*\t]\%(\.\|->\)\|\h\w*::'
-
-
-
 " Enable omni completion.
 autocmd FileType java setlocal omnifunc=javacomplete#Complete
 autocmd FileType cs setlocal omnifunc=OmniSharp#Complete
@@ -287,7 +257,7 @@ autocmd FileType JavaScript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
-autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+"autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType c set omnifunc=ccomplete#Complete
 
 autocmd FileType vue syntax sync fromstart
