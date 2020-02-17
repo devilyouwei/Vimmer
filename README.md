@@ -33,7 +33,7 @@ git clone https://github.com/devilyouwei/Vimmer.git
 ```
 
 2. Copy '.vimrc' to user directory, Linux is '/home/username/.vimrc' or '~'. Windows is '\_vimrc' and copy to 'c:\\users\\username_vimrc'
-3. Copy .eslintrc.json to user directory if you need eslint to check your front-end code.
+3. Copy '.eslintrc.json' and '.prettierrc.json' to user directory if you need eslint to check your front-end code and use prettier to format your code.
 4. Install node js, refer to node offcial website. [https://nodejs.org](https://nodejs.org)
 5. Install the fonts in '/fonts', Windows move the fonts to 'C:\windows\Fonts\', Linux just double click the font.
 6. Install vundle or vim-plug, first you need to cd to user directory and then execute the following cmd.
@@ -135,8 +135,8 @@ NeoVim 比 Vim 更年轻，更快速，更多插件支持。
 git clone https://github.com/devilyouwei/Vimmer.git
 ```
 
-2. 复制.vimrc 到用户目录，Linux 是 '/home/username/.vimrc' or '~/', Windows 是 'c:\users\username_vimrc'
-3. 复制 .eslintrc.json 到用户目录
+2. 复制.vimrc 到用户目录，Linux 是 '/home/username/.vimrc' or '~/', Windows 是 'c:\users\username\_vimrc'
+3. 复制 .eslintrc.json 和 .prettierrc.json 到用户目录，eslint 检查代码，prettier 可以格式化各种前端代码
 4. 安装 nodejs，详细参考 node 官网
 5. 安装字体，字体在 fonts 目录下，windows 直接移动字体到'C:\windows\Fonts\'，ubuntu 可以双击安装
 6. 安装 vundle，先切换到用户目录下，注意 vundle 生成的.vundle 必须在用户目录下面，所有的插件都会被安装到这个目录下，当 vim 启动时自动加载。

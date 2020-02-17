@@ -117,6 +117,11 @@ set selection=inclusive
 set wildmenu
 set mousemodel=popup
 set t_Co=256 "256位色"
+set termguicolors
+set re=1
+set lazyredraw
+set synmaxcol=128
+syntax sync minlines=256
 
 "--------------------syntastic相关---------------------------------
 
@@ -176,12 +181,19 @@ set guifont=Monaco\ Bold\ 12
 
 
 
-"快捷键配置----------------------------------------------------------------------------
+"tab, buffer快捷键配置----------------------------------------------------------------------------
+map <S-H> :tabp<CR>
+map <S-L> :tabn<CR>
 map <S-Left> :tabp<CR>
 map <S-Right> :tabn<CR>
+map <C-H> :bn<CR>            "下一个缓冲区
+map <C-L> :bp<CR>        "上一个缓冲区
+map <C-Left> :bn<CR>            "下一个缓冲区
+map <C-Right> :bp<CR>        "上一个缓冲区
+
 "打开airline智能tab
 let g:airline#extensions#tabline#enabled = 1
-"set clipboard=unnamed
+let g:airline_powerline_fonts = 1
 "去空行  
 nnoremap <F2> :g/^\s*$/d<CR> 
 
@@ -256,7 +268,6 @@ set noswapfile
 set ignorecase
 set linespace=0
 " 增强模式中的命令行自动完成操作
-set wildmenu
 " 使回格键（backspace）正常处理indent, eol, start等
 set backspace=2
 " 可以在buffer的任何地方使用鼠标（类似office中在工作区双击鼠标定位）
@@ -283,6 +294,10 @@ set autochdir "输出时只有文件名，不带./ ../等目录前缀(默认了�
 set termencoding=UTF-8
 set encoding=UTF-8
 set fileencodings=utf-8,ucs-bom,gbk,cp936,gb2312,gb18030
+
+set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
+            \,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor
+            \,sm:block-blinkwait175-blinkoff150-blinkon175
 
 
 "关于neocomplete，需要安装lua---------------------------------------------------------------------

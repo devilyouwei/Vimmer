@@ -1,0 +1,10 @@
+{
+    "trailingComma": "none",
+    "vueIndentScriptAndStyle": true,
+    "tabWidth": 4,
+    "semi": false,
+    "jsxSingleQuote": true,
+    "bracketSpacing": true,
+    "htmlWhitespaceSensitivity":"css",
+    "singleQuote": true
+}
