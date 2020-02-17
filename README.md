@@ -149,14 +149,9 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \ https://raw.githubusercontent
 
 ```bash
 npm install -g eslint
-npm install -g eslint-plugin-react
-npm install -g eslint-plugin-vue
-npm install -g eslint-plugin-angular
-npm install -g eslint-plugin-standard
-npm install -g eslint-plugin-promise
-npm install -g babel-eslint
-npm install -g eslint-config-standard
 npm install -g prettier
+npm install -g eslint-plugin-prettier
+npm install -g eslint-config-prettier
 ```
 
 9. 安装 Ctags，windows 可能需要单独下载 ctags 包，ubuntu 可以直接安装
