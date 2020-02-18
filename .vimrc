@@ -3,8 +3,8 @@ set nocompatible
 call plug#begin('~/.vim/plugged')
 Plug 'Shougo/neco-vim'
 Plug 'majutsushi/tagbar', {'on':'TagbarToggle'}
-Plug 'prettier/vim-prettier', {'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
-let g:prettier#config#tab_width = 4
+Plug 'sbdchd/neoformat'
+Plug 'prettier/vim-prettier', {'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'jsx', 'yaml'] }
 Plug 'jiangmiao/auto-pairs'
 Plug 'artur-shaik/vim-javacomplete2',{'for':'java'}
 Plug 'vim-airline/vim-airline'
@@ -20,7 +20,6 @@ Plug 'udalov/kotlin-vim', {'for':'kotlin'}
 Plug 'maksimr/vim-jsbeautify'
 Plug 'othree/html5.vim'
 Plug 'othree/javascript-libraries-syntax.vim'
-Plug 'sickill/vim-monokai'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight', { 'on': 'NERDTreeToggle' }
 Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }
@@ -55,7 +54,6 @@ Plug 'leshill/vim-json', {'for':'json'}
 Plug 'rhysd/vim-clang-format', {'for':['c','cpp']}
 Plug 'vim-scripts/matchit.zip'
 "Plug 'vim-scripts/indentpython.vim'
-Plug 'jelera/vim-javascript-syntax'
 Plug 'tpope/vim-haml'
 "Plug 'AutoComplPop'
 Plug 'OmniSharp/omnisharp-vim'
@@ -198,8 +196,9 @@ let g:airline_powerline_fonts = 1
 nnoremap <F2> :g/^\s*$/d<CR> 
 
 "代码格式化
-noremap <F12> gg=G
-autocmd FileType javascript,typescript,css,less,scss,json,graphql,markdown,vue,yaml,html noremap <F12> :Prettier<CR>
+nnoremap <F12> mqgg=G'q
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
+autocmd filetype javascript,typescript,css,less,scss,json,graphql,markdown,jsx,yaml nnoremap <buffer> <F12> :Prettier<CR>
 
 "html标签自动补全
 map! <C-O> <C-Y>,
