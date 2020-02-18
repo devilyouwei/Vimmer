@@ -2,6 +2,7 @@ set nocompatible
 "Vim-Plug配置
 call plug#begin('~/.vim/plugged')
 Plug 'Shougo/neco-vim'
+Plug 'Chiel92/vim-autoformat'
 Plug 'majutsushi/tagbar', {'on':'TagbarToggle'}
 Plug 'sbdchd/neoformat'
 Plug 'prettier/vim-prettier', {'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'jsx', 'yaml'] }
@@ -196,7 +197,7 @@ let g:airline_powerline_fonts = 1
 nnoremap <F2> :g/^\s*$/d<CR> 
 
 "代码格式化
-nnoremap <F12> mqgg=G'q
+nnoremap <F12> :Autoformat<CR>
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 autocmd filetype javascript,typescript,css,less,scss,json,graphql,markdown,jsx,yaml nnoremap <buffer> <F12> :Prettier<CR>
 

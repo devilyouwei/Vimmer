@@ -1,5 +1,7 @@
 # Vimmer(EN)
 
+![logo](./example/logo.png)
+
 **Simple and Fast Vim**
 
 Powerful but minimize vim config file, make your vim like a simple IDE, it is especially suitable for web developers.
@@ -54,13 +56,15 @@ npm install -g eslint
 npm install -g prettier
 npm install -g eslint-plugin-prettier
 npm install -g eslint-config-prettier
+npm install -g js-beautify
 ```
 
 9. Install ctags directly, if you are using ubuntu.
 
 ```bash
-// tagbar need ctags
+// tagbar need ctags, autoformat need astyle
 sudo apt install ctags
+sudo apt install astyle
 ```
 
 Windows need you to download ctags and add to PATH environment.
@@ -152,13 +156,15 @@ npm install -g eslint
 npm install -g prettier
 npm install -g eslint-plugin-prettier
 npm install -g eslint-config-prettier
+npm install -g js-beautify
 ```
 
 9. 安装 Ctags，windows 可能需要单独下载 ctags 包，ubuntu 可以直接安装
 
 ```
-//vim的tagbar插件需要ctags
+//vim的tagbar插件需要ctags，autoformat插件需要astyle
 sudo apt install ctags
+sudo apt install astyle
 ```
 
 很简单吧，打开 vim👀 看看有什么不一样。
