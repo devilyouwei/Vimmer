@@ -25,6 +25,7 @@ I recommend NeoVim, please use NVimmer to config your NeoVim as here 'Vimmer for
 7. c/c++
 8. Markdown
 9. json
+10. react js/jsx/tsx [new]
 
 ## Quick start
 

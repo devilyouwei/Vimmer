@@ -35,8 +35,14 @@ Plug 'ervandew/supertab'
 Plug '1995eaton/vim-better-javascript-completion'
 Plug 'tomasr/molokai'
 Plug 'leafgarland/typescript-vim'
-Plug 'HerringtonDarkholme/yats.vim'
+"Plug 'HerringtonDarkholme/yats.vim'
 Plug 'Quramy/tsuquyomi'
+Plug 'peitalin/vim-jsx-typescript'
+Plug 'mxw/vim-jsx' "plugin for jsx, but recommend use js instead of jsx file
+let g:typescript_indent_disable = 1
+Plug 'yuezk/vim-js'
+Plug 'maxmellon/vim-jsx-pretty'
+
 Plug 'mhartington/vim-typings'
 Plug 'Quramy/vim-js-pretty-template'
 Plug 'jason0x43/vim-js-indent'
@@ -215,23 +221,25 @@ func! Compile()
     exec "w"
     if &filetype == 'c'
         exec "!gcc % -o %<"
-        exec "! ./%<"
+        exec "!time ./%<"
     elseif &filetype == 'cpp'
         exec "!g++ % -o %<"
-        exec "! ./%<"
-    elseif &filetype == 'java' 
-        exec "!javac %" 
-        exec "!java %<"
-    elseif &filetype == 'kotlin' 
-        exec "!kotlinc-native % -o %<" 
-        exec "! ./%<.kexe"
+        exec "!time ./%<"
+    elseif &filetype == 'java'
+        exec "!javac %"
+        exec "!time java %<"
+    elseif &filetype == 'kotlin'
+        exec "!kotlinc-native % -o %<"
+        exec "!time ./%<.kexe"
     elseif &filetype == 'cs'
         exec "!mcs %"
-        exec "!mono %<.exe"
+        exec "!time mono %<.exe"
     elseif &filetype == 'python'
-        exec "!python3 %"
+        exec "!time python3 %"
     elseif &filetype == 'javascript'
-        exec "!node %"
+        exec "!time node %"
+    elseif &filetype == 'php'
+        exec "!time php %"
     endif
 endfunc
 
