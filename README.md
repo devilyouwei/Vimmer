@@ -136,31 +136,21 @@ Windows 上，Gvim 仍将受到支持，所以，该项目将会继续支持 Win
 git clone https://github.com/devilyouwei/Vimmer.git
 ```
 
--   复制.vimrc 到用户目录，Linux 是 '/home/username/.vimrc' or '~/', Windows 是 'c:\users\username_vimrc'
+-   复制.vimrc 到用户目录，Linux 是 '/home/username/.vimrc' or '~/', Windows 是 'c:\Users' 下的自己用户名的目录
 -   复制 vimfiles 到 windows 的用户目录下，里面已经包含了 vim-plug 插件
 -   复制 .eslintrc.json 和 .prettierrc.json 到用户目录，eslint 检查代码，prettier 可以格式化各种前端代码
 -   安装 nodejs，详细参考 node 官网
 -   安装字体，字体在 fonts 目录下，windows 直接移动字体到'C:\windows\Fonts\'，ubuntu 可以双击安装
--   安装 vundle，先切换到用户目录下，注意 vundle 生成的.vundle 必须在用户目录下面，所有的插件都会被安装到这个目录下，当 vim 启动时自动加载。
+-   打开 vim 或 Windows gvim。使用:PlugInstall 命令安装所有插件
+-   JS 代码检查需要安装 eslint
 
-```bash
-//Windows vundle
-git clone https://github.com/VundleVim/Vundle.vim.git .vim/bundle/Vundle.vim // Windows, you need to move .vim to Users' home dir
-
-// Linux Vim-Plug
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-```
-
-7. 打开 vim，Windows gvim。使用:PlugInstall 安装所有插件
-8. JS 代码检查需要安装 eslint
-
-    （注意，如果项目目录下也有 eslintrc 或者 package 配置文件，将会覆盖用户目录下全局的 eslint 配置文件，vim 自动使用项目目录下的 eslint 配置，这很合理）
+    （注意，如果项目目录下也有 eslintrc 或者 package 配置文件，将会覆盖用户目录下的全局 eslint 配置文件，vim 自动使用项目目录下的 eslint 配置，这很合理）
 
 ```bash
 npm install -g eslint
 ```
 
-9. 安装 Ctags，windows 可能需要单独下载 ctags 包，ubuntu 可以直接安装
+-   安装 Ctags，windows 可能需要单独下载 ctags 包，ubuntu 可以直接安装
 
 ```
 //vim的tagbar插件需要ctags，autoformat插件需要astyle
