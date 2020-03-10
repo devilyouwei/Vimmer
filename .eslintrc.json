@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
     "parserOptions": {
         "ecmaVersion": 8,
         "parser": "babel-eslint"
@@ -12,6 +13,14 @@
     },
     "plugins": [],
     "extends": ["eslint:recommended"],
+=======
+    "plugins": ["prettier"],
+    "extends": [
+        "plugin:vue/recommended",
+        "plugin:prettier/recommended",
+        "eslint:recommended"
+    ],
+>>>>>>> 7bbf95ccd3c8cb0bb29a26ab8fecd552e4e322fd
     "rules": {
         "no-console": "off",
         "no-unused-vars":"warn"

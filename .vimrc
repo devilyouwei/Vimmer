@@ -2,9 +2,10 @@ set nocompatible
 "Vim-Plug配置
 call plug#begin('~/.vim/plugged')
 Plug 'Shougo/neco-vim'
+Plug 'Chiel92/vim-autoformat'
 Plug 'majutsushi/tagbar', {'on':'TagbarToggle'}
-Plug 'prettier/vim-prettier', {'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
-let g:prettier#config#tab_width = 4
+Plug 'sbdchd/neoformat'
+Plug 'prettier/vim-prettier', {'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'jsx', 'yaml'] }
 Plug 'jiangmiao/auto-pairs'
 Plug 'artur-shaik/vim-javacomplete2',{'for':'java'}
 Plug 'vim-airline/vim-airline'
@@ -20,7 +21,6 @@ Plug 'udalov/kotlin-vim', {'for':'kotlin'}
 Plug 'maksimr/vim-jsbeautify'
 Plug 'othree/html5.vim'
 Plug 'othree/javascript-libraries-syntax.vim'
-Plug 'sickill/vim-monokai'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight', { 'on': 'NERDTreeToggle' }
 Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }
@@ -35,8 +35,14 @@ Plug 'ervandew/supertab'
 Plug '1995eaton/vim-better-javascript-completion'
 Plug 'tomasr/molokai'
 Plug 'leafgarland/typescript-vim'
-Plug 'HerringtonDarkholme/yats.vim'
+"Plug 'HerringtonDarkholme/yats.vim'
 Plug 'Quramy/tsuquyomi'
+Plug 'peitalin/vim-jsx-typescript'
+Plug 'mxw/vim-jsx' "plugin for jsx, but recommend use js instead of jsx file
+let g:typescript_indent_disable = 1
+Plug 'yuezk/vim-js'
+Plug 'maxmellon/vim-jsx-pretty'
+
 Plug 'mhartington/vim-typings'
 Plug 'Quramy/vim-js-pretty-template'
 Plug 'jason0x43/vim-js-indent'
@@ -55,7 +61,6 @@ Plug 'leshill/vim-json', {'for':'json'}
 Plug 'rhysd/vim-clang-format', {'for':['c','cpp']}
 Plug 'vim-scripts/matchit.zip'
 "Plug 'vim-scripts/indentpython.vim'
-Plug 'jelera/vim-javascript-syntax'
 Plug 'tpope/vim-haml'
 "Plug 'AutoComplPop'
 Plug 'OmniSharp/omnisharp-vim'
@@ -198,8 +203,9 @@ let g:airline_powerline_fonts = 1
 nnoremap <F2> :g/^\s*$/d<CR> 
 
 "代码格式化
-noremap <F12> gg=G
-autocmd FileType javascript,typescript,css,less,scss,json,graphql,markdown,vue,yaml,html noremap <F12> :Prettier<CR>
+nnoremap <F12> :Autoformat<CR>
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
+autocmd filetype javascript,typescript,css,less,scss,json,graphql,markdown,jsx,yaml nnoremap <buffer> <F12> :Prettier<CR>
 
 "html标签自动补全
 map! <C-O> <C-Y>,
@@ -215,23 +221,25 @@ func! Compile()
     exec "w"
     if &filetype == 'c'
         exec "!gcc % -o %<"
-        exec "! ./%<"
+        exec "!time ./%<"
     elseif &filetype == 'cpp'
         exec "!g++ % -o %<"
-        exec "! ./%<"
-    elseif &filetype == 'java' 
-        exec "!javac %" 
-        exec "!java %<"
-    elseif &filetype == 'kotlin' 
-        exec "!kotlinc-native % -o %<" 
-        exec "! ./%<.kexe"
+        exec "!time ./%<"
+    elseif &filetype == 'java'
+        exec "!javac %"
+        exec "!time java %<"
+    elseif &filetype == 'kotlin'
+        exec "!kotlinc-native % -o %<"
+        exec "!time ./%<.kexe"
     elseif &filetype == 'cs'
         exec "!mcs %"
-        exec "!mono %<.exe"
+        exec "!time mono %<.exe"
     elseif &filetype == 'python'
-        exec "!python3 %"
+        exec "!time python3 %"
     elseif &filetype == 'javascript'
-        exec "!node %"
+        exec "!time node %"
+    elseif &filetype == 'php'
+        exec "!time php %"
     endif
 endfunc
 
