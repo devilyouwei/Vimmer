@@ -1,6 +1,19 @@
 {
-    "plugins": ["prettier"],
+    "parserOptions": {
+        "ecmaVersion": 8,
+        "parser": "babel-eslint"
+    },
+    "env": {
+        "es6": true,
+        "jquery":true,
+        "commonjs": true,
+        "browser": true,
+        "node": true
+    },
+    "plugins": [],
+    "extends": ["eslint:recommended"],
     "rules": {
-        "prettier/prettier": "error"
+        "no-console": "off",
+        "no-unused-vars":"warn"
     }
 }

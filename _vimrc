@@ -1,71 +1,300 @@
-"Vundle配置
-set nocompatible
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-"Plugin 'Shougo/neco-vim'
-Plugin 'majutsushi/tagbar'
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'vim-airline/vim-airline'
-"Plugin 'beanworks/vim-phpfmt'
-Plugin 'ryanoasis/vim-devicons'
-Plugin 'c.vim'
-Plugin 'hail2u/vim-css3-syntax'
-Plugin 'mattn/emmet-vim'
-Plugin 'cakebaker/scss-syntax.vim'
-Plugin 'pangloss/vim-javascript'
-Plugin 'alvan/vim-closetag'
-Plugin 'Yggdroot/indentLine'
-Plugin 'udalov/kotlin-vim'
-Plugin 'maksimr/vim-jsbeautify'
-Plugin 'othree/html5.vim'
-Plugin 'othree/javascript-libraries-syntax.vim'
-Plugin 'sickill/vim-monokai'
-Plugin 'scrooloose/nerdtree'
-Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'scrooloose/syntastic'
-"Plugin 'Shougo/neocomplete.vim'
-"Plugin 'Shougo/neosnippet'
-"Plugin 'Shougo/neosnippet-snippets'
-Plugin 'chemzqm/wxapp.vim'
-Plugin 'ervandew/supertab'
-"Plugin 'OmniCppComplete' 
-"Plugin 'othree/jspc.vim'
-Plugin '1995eaton/vim-better-javascript-completion'
-Plugin 'tomasr/molokai'
-Plugin 'leafgarland/typescript-vim'
-Plugin 'HerringtonDarkholme/yats.vim'
-Plugin 'Quramy/tsuquyomi'
-Plugin 'mhartington/vim-typings'
-Plugin 'Quramy/vim-js-pretty-template'
-Plugin 'jason0x43/vim-js-indent'
-Plugin 'Quramy/vim-dtsm'
-"Plugin 'digitaltoad/vim-pug' 
-"Plugin 'dNitro/vim-pug-complete' 
-"Plugin 'itspriddle/vim-jquery'
-Plugin 'posva/vim-vue'
-Plugin 'myhere/vim-nodejs-complete'
-"Plugin 'heavenshell/vim-jsdoc'
-Plugin 'isRuslan/vim-es6'
-Plugin 'millermedeiros/vim-esformatter'
-Plugin 'mtscout6/syntastic-local-eslint.vim'
-"Plugin 'ruanyl/vim-fixmyjs'
-Plugin 'leshill/vim-json'
-"Plugin 'rhysd/vim-clang-format'
-Plugin 'vim-scripts/matchit.zip'
-"Plugin 'vim-scripts/indentpython.vim'
-Plugin 'jelera/vim-javascript-syntax'
-Plugin 'tpope/vim-haml'
-"Plugin 'gko/vim-coloresque'
-Plugin 'AutoComplPop'
-"Bundle 'OmniSharp/omnisharp-vim'
-Plugin 'shawncplus/phpcomplete.vim'
-"Plugin 'mxw/vim-jsx'
-"Plugin 'ternjs/tern_for_vim'
-call vundle#end()            " required
+"vim-plug
+call plug#begin('~/.vim/plugged')
+Plug 'neoclide/coc.nvim', {'branch':'release'}
+let g:coc_global_extensions=[
+            \'coc-omnisharp',
+            \'coc-html',
+            \'coc-eslint',
+            \'coc-snippets',
+            \'coc-pairs',
+            \'coc-emmet',
+            \'coc-java',
+            \'coc-json',
+            \'coc-highlight',
+            \'coc-css',
+            \'coc-phpls',
+            \'coc-prettier',
+            \'coc-wxml',
+            \'coc-tsserver',
+            \'coc-vetur',
+            \'coc-stylelint',
+            \'coc-angular'
+            \]
+Plug 'Shougo/neco-vim'
+Plug 'neoclide/coc-neco'
+Plug 'tomasr/molokai'
+Plug 'sickill/vim-monokai'
+Plug 'majutsushi/tagbar', {'on':'TagbarToggle'}
+Plug 'Chiel92/vim-autoformat'
+Plug 'jiangmiao/auto-pairs'
+Plug 'vim-airline/vim-airline'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+Plug 'jreybert/vimagit'
+Plug 'tpope/vim-fugitive'
+Plug 'ryanoasis/vim-devicons'
+Plug 'Yggdroot/indentLine'
+Plug 'udalov/kotlin-vim', {'for':'kotlin'}
+Plug 'uiiaoo/java-syntax.vim', {'for':'java'}
+Plug 'othree/html5.vim',{'for':['html','vue','php','javascript']}
+Plug 'mattn/emmet-vim',{'for':['html','xml','vue','php','javascript','typescript','typescript.tsx','javascript.jsx']}
+Plug 'alvan/vim-closetag',{'for':['html','xml','vue','php','javascript','typescript','typescript.tsx','javascript.jsx']}
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'tpope/vim-surround'
+Plug 'pangloss/vim-javascript',{'for':'javascript'}
+Plug 'othree/javascript-libraries-syntax.vim'
+Plug 'isRuslan/vim-es6'
+Plug 'yuezk/vim-js'
+Plug 'maxmellon/vim-jsx-pretty'
+Plug 'HerringtonDarkholme/yats.vim'
+let g:vim_jsx_pretty_colorful_config = 1 " default 0
+Plug 'vim-scripts/matchit.zip'
+Plug 'leshill/vim-json', {'for':'json'}
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight', { 'on': 'NERDTreeToggle' }
+Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }
+Plug 'chemzqm/wxapp.vim', {'for':['wxml','wxss','js']}
+Plug 'OmniSharp/omnisharp-vim', {'for':'cs'}
+"Plug 'OrangeT/vim-csharp', {'for':'cs'}
+Plug 'w0rp/ale',{'for':'cs'}
+Plug 'posva/vim-vue',{'for':'vue'}
+Plug 'hail2u/vim-css3-syntax'
+let g:vue_pre_processors = []
+Plug 'sheerun/vim-polyglot'
+let g:polyglot_disabled = [
+            \'css',
+            \'markdown',
+            \'vue',
+            \'html',
+            \'javascript',
+            \'typescript',
+            \'kotlin',
+            \'reactjavascript',
+            \'reacttypescript',
+            \'php'
+            \]
+"彩虹括号
+Plug 'kien/rainbow_parentheses.vim'
+let g:rbpt_colorpairs = [
+            \ ['brown', 'RoyalBlue3'],
+            \ ['Darkblue', 'SeaGreen3'],
+            \ ['darkgray', 'DarkOrchid3'],
+            \ ['darkgreen', 'firebrick3'],
+            \ ['darkcyan', 'RoyalBlue3'],
+            \ ['darkred', 'SeaGreen3'],
+            \ ['darkmagenta', 'DarkOrchid3'],
+            \ ['brown', 'firebrick3'],
+            \ ['gray', 'RoyalBlue3'],
+            \ ['black', 'SeaGreen3'],
+            \ ['darkmagenta', 'DarkOrchid3'],
+            \ ['Darkblue', 'firebrick3'],
+            \ ['darkgreen', 'RoyalBlue3'],
+            \ ['darkcyan', 'SeaGreen3'],
+            \ ['darkred', 'DarkOrchid3'],
+            \ ['red', 'firebrick3'],
+            \ ]
+let g:rbpt_max = 8
+let g:rbpt_loadcmd_toggle = 0
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+au Syntax * RainbowParenthesesLoadChevrons
+call plug#end()
 
+"------------------------------coc.nvim---------------------------------------
+
+filetype on
+
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
+set hidden
+set cmdheight=2
+set updatetime=300
+set shortmess+=c
+set signcolumn=yes
+
+inoremap <silent><expr> <TAB>
+            \ pumvisible() ? "\<C-n>" :
+            \ <SID>check_back_space() ? "\<TAB>" :
+            \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Use <c-space> to trigger completion.
+inoremap <silent><expr> <c-space> coc#refresh()
+
+" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
+" Coc only does snippet and additional edit on confirm.
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+" Or use `complete_info` if your vim support it, like:
+" inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+
+" Use `[g` and `]g` to navigate diagnostics
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+" Remap keys for gotos
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Use K to show documentation in preview window
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+    if (index(['vim','help'], &filetype) >= 0)
+        execute 'h '.expand('<cword>')
+    else
+        call CocAction('doHover')
+    endif
+endfunction
+
+" Highlight symbol under cursor on CursorHold
+autocmd CursorHold * silent call CocActionAsync('highlight')
+" Remap for rename current word
+nmap <leader>rn <Plug>(coc-rename)
+" Remap for format selected region
+xmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
+
+augroup mygroup
+    autocmd!
+    " Setup formatexpr specified filetype(s).
+    autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+    " Update signature help on jump placeholder
+    autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+augroup end
+
+" Remap for do codeAction of selected region, ex: `<leader>aap` for current paragraph
+xmap <leader>a  <Plug>(coc-codeaction-selected)
+nmap <leader>a  <Plug>(coc-codeaction-selected)
+
+" Remap for do codeAction of current line
+nmap <leader>ac  <Plug>(coc-codeaction)
+" Fix autofix problem of current line
+nmap <leader>qf  <Plug>(coc-fix-current)
+
+" Create mappings for function text object, requires document symbols feature of languageserver.
+xmap if <Plug>(coc-funcobj-i)
+xmap af <Plug>(coc-funcobj-a)
+omap if <Plug>(coc-funcobj-i)
+omap af <Plug>(coc-funcobj-a)
+
+" Use <TAB> for select selections ranges, needs server support, like: coc-tsserver, coc-python
+nmap <silent> <TAB> <Plug>(coc-range-select)
+xmap <silent> <TAB> <Plug>(coc-range-select)
+
+" Use `:Format` to format current buffer
+command! -nargs=0 Format :call CocAction('format')
+
+" Use `:Fold` to fold current buffer
+command! -nargs=? Fold :call     CocAction('fold', <f-args>)
+
+" use `:OR` for organize import of current buffer
+command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
+
+" Add status line support, for integration with other plugin, checkout `:h coc-status`
+set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+
+" Using CocList
+" Show all diagnostics
+nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>
+" Manage extensions
+nnoremap <silent> <space>e  :<C-u>CocList extensions<cr>
+" Show commands
+nnoremap <silent> <space>c  :<C-u>CocList commands<cr>
+" Find symbol of current document
+nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
+" Search workspace symbols
+nnoremap <silent> <space>s  :<C-u>CocList -I symbols<cr>
+" Do default action for next item.
+nnoremap <silent> <space>j  :<C-u>CocNext<CR>
+" Do default action for previous item.
+nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
+" Resume latest coc list
+nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
+
+"------------------------------coc.nvim---------------------------------------------
+"
+"
+"-----------------------------omnisharp----------------------------------------------
+filetype indent plugin on
+" Use the stdio OmniSharp-roslyn server
+let g:OmniSharp_server_stdio = 1
+" Set the type lookup function to use the preview window instead of echoing it
+"let g:OmniSharp_typeLookupInPreview = 1
+" Timeout in seconds to wait for a response from the server
+let g:OmniSharp_timeout = 5
+" Don't autoselect first omnicomplete option, show options even if there is only
+" one (so the preview documentation is accessible). Remove 'preview' if you
+" don't want to see any documentation whatsoever.
+set completeopt=longest,menuone,preview
+
+" Fetch full documentation during omnicomplete requests.
+" By default, only Type/Method signatures are fetched. Full documentation can
+" still be fetched when you need it with the :OmniSharpDocumentation command.
+let g:omnicomplete_fetch_full_documentation = 1
+set previewheight=5
+" Tell ALE to use OmniSharp for linting C# files, and no other linters.
+let g:ale_linters = { 'cs': ['OmniSharp'] }
+
+augroup omnisharp_commands
+    autocmd!
+
+    " Show type information automatically when the cursor stops moving.
+    " Note that the type is echoed to the Vim command line, and will overwrite
+    " any other messages in this space including e.g. ALE linting messages.
+    autocmd CursorHold *.cs OmniSharpTypeLookup
+
+    " The following commands are contextual, based on the cursor position.
+    autocmd FileType cs nnoremap <buffer> gd :OmniSharpGotoDefinition<CR>
+    autocmd FileType cs nnoremap <buffer> <Leader>fi :OmniSharpFindImplementations<CR>
+    autocmd FileType cs nnoremap <buffer> <Leader>fs :OmniSharpFindSymbol<CR>
+    autocmd FileType cs nnoremap <buffer> <Leader>fu :OmniSharpFindUsages<CR>
+
+    " Finds members in the current buffer
+    autocmd FileType cs nnoremap <buffer> <Leader>fm :OmniSharpFindMembers<CR>
+
+    autocmd FileType cs nnoremap <buffer> <Leader>fx :OmniSharpFixUsings<CR>
+    autocmd FileType cs nnoremap <buffer> <Leader>tt :OmniSharpTypeLookup<CR>
+    autocmd FileType cs nnoremap <buffer> <Leader>dc :OmniSharpDocumentation<CR>
+    autocmd FileType cs nnoremap <buffer> <C-\> :OmniSharpSignatureHelp<CR>
+    autocmd FileType cs inoremap <buffer> <C-\> <C-o>:OmniSharpSignatureHelp<CR>
+
+    " Navigate up and down by method/property/field
+    autocmd FileType cs nnoremap <buffer> <C-k> :OmniSharpNavigateUp<CR>
+    autocmd FileType cs nnoremap <buffer> <C-j> :OmniSharpNavigateDown<CR>
+
+    " Find all code errors/warnings for the current solution and populate the quickfix window
+    autocmd FileType cs nnoremap <buffer> <Leader>cc :OmniSharpGlobalCodeCheck<CR>
+augroup END
+
+" Contextual code actions (uses fzf, CtrlP or unite.vim when available)
+nnoremap <Leader><Space> :OmniSharpGetCodeActions<CR>
+" Run code actions with text selected in visual mode to extract method
+xnoremap <Leader><Space> :call OmniSharp#GetCodeActions('visual')<CR>
+
+" Rename with dialog
+nnoremap <Leader>nm :OmniSharpRename<CR>
+nnoremap <F2> :OmniSharpRename<CR>
+" Rename without dialog - with cursor on the symbol to rename: `:Rename newname`
+command! -nargs=1 Rename :call OmniSharp#RenameTo("<args>")
+
+nnoremap <Leader>cf :OmniSharpCodeFormat<CR>
+
+" Start the omnisharp server for the current solution
+nnoremap <Leader>ss :OmniSharpStartServer<CR>
+nnoremap <Leader>sp :OmniSharpStopServer<CR>
+
+"-----------------------------omnisharp--------------------------------------------------
+
+"vim基础设置-----------------------------------------------------------------------------
 if has("gui_running")
     au GUIEnter * simalt ~x " 窗口启动时自动最大化
     set guioptions-=m " 隐藏菜单栏
@@ -76,8 +305,7 @@ if has("gui_running")
     set showtabline=0 " 隐藏Tab栏
 endif
 
-filetype on
-syntax on
+syntax enable
 set sw=4
 set ts=4
 set et
@@ -89,26 +317,16 @@ set sm
 set selection=inclusive
 set wildmenu
 set mousemodel=popup
-set t_Co=256 "256位色"
-
-"--------------------syntastic相关---------------------------------
-
-"检查语法错误
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_javascript_checkers = ['eslint']
+set termguicolors
+set re=1
+set lazyredraw
+set synmaxcol=0
+set t_Co=256
 
 "-------------------显示相关---------------------------------------
 set cul "高亮光标所在行
 set cuc
 color molokai     " 设置背景主题  
-set guifont=CodeNewRoman_NF:h15
 set ruler           " 显示标尺  
 set showcmd         " 输入的命令显示出来，看的清楚些  
 set scrolloff=2     " 光标移动到buffer的顶部和底部时保持3行距离  
@@ -131,13 +349,14 @@ set expandtab
 set smarttab
 " 显示行号
 set number
+set showmode
+
 " 历史记录数
 set history=1000
 "搜索逐字符高亮
 set hlsearch
 set incsearch
 "语言设置
-set langmenu=zh_CN.UTF-8
 set helplang=cn
 " 总是显示状态行
 set cmdheight=1
@@ -146,45 +365,69 @@ set viminfo+=!
 " 带有如下符号的单词不要被换行分割
 set iskeyword+=$,@,%,#,-,_
 
+set guifont=CodeNewRoman_NF:h14
 
-"快捷键配置----------------------------------------------------------------------------
+filetype plugin on
+
+
+"tab, buffer快捷键配置----------------------------------------------------------------------------
+map <S-H> :tabp<CR>
+map <S-L> :tabn<CR>
 map <S-Left> :tabp<CR>
 map <S-Right> :tabn<CR>
-"打开airline智能tab
-let g:airline#extensions#tabline#enabled = 1
-"set clipboard=unnamed
+map <C-H> :bn<CR>            "下一个缓冲区
+map <C-L> :bp<CR>        "上一个缓冲区
+map <C-Left> :bn<CR>            "下一个缓冲区
+map <C-Right> :bp<CR>        "上一个缓冲区
+
+
+"代码格式化---------------------------------------------------------------------------------------
+noremap <F12> :syntax sync fromstart<CR>:Format<CR>
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
+"前端主要使用Prettier美化
+autocmd filetype markdown,css,yaml,typescript,vue nnoremap <buffer> <F12> :Prettier<CR>
+"编译型
+autocmd filetype cs,c,cpp noremap <buffer> <F12> :Autoformat<CR>
+
+"常用快捷键---------------------------------------------------------------------------------------
 "去空行  
 nnoremap <F2> :g/^\s*$/d<CR> 
-"代码格式化插件
-noremap <F12> gg=G
 "html标签自动补全
 map! <C-O> <C-Y>,
 "列出当前目录文件  
-map <F3> :NERDTreeToggle<CR>
-imap <F3> <ESC> :NERDTreeToggle<CR>
+nmap <F3> :NERDTreeToggle<CR>
 "tagbar
 nmap <F9> :TagbarToggle<CR>
-"C，C++ 按F5编译运行
-map <F5> :call CompileRunGcc()<CR>
-func! CompileRunGcc()
+
+"按F5保存
+nmap <F5> :syntax sync fromstart<CR>:w<CR>
+
+"按F6编译运行
+nmap <F6> :syntax sync fromstart<CR>:call Compile()<CR>
+
+func! Compile()
     exec "w"
     if &filetype == 'c'
         exec "!gcc % -o %<"
-        exec "! %<.exe"
+        exec "!time ./%<"
     elseif &filetype == 'cpp'
         exec "!g++ % -o %<"
-        exec "! %<.exe"
-    elseif &filetype == 'java' 
-        exec "!javac %" 
-        exec "!java %<"
+        exec "!time ./%<"
+    elseif &filetype == 'java'
+        exec "!javac %"
+        exec "!time java %<"
     elseif &filetype == 'kotlin'
-        exec "!kotlinc % -o %<"
-        exec "! %<.exe"
+        exec "!kotlinc-native % -o %<"
+        exec "!time ./%<.kexe"
     elseif &filetype == 'cs'
         exec "!mcs %"
-        exec "!mono %<.exe"
+        exec "!time mono %<.exe"
     elseif &filetype == 'python'
-        exec "!python3 %"
+        exec "!time python3 %"
+    elseif &filetype == 'javascript'
+        exec "!time node %"
+    elseif &filetype == 'php'
+        exec "!time php %"
     endif
 endfunc
 
@@ -202,26 +445,32 @@ endfunc
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 " 设置当文件被改动时自动载入
 set autoread
+au FocusGained * :checktime
 " quickfix模式
 autocmd FileType c,cpp map <buffer> <leader><space> :w<cr>:make<cr>
-"代码补全 
-set completeopt=preview,menu 
+"代码补全
+set completeopt=longest,menu
 "自动保存
 set autowrite
 " 去掉输入错误的提示声音
 "set noeb
 " 在处理未保存或只读文件的时候，弹出确认
 set confirm
+"禁止自动分行
+set wrap
+set linebreak
 
 "禁止生成临时文件
 set noundofile
 set nobackup
+set nowritebackup
 set noswapfile
+
 "搜索忽略大小写
 set ignorecase
+set smartcase
 set linespace=0
-" 增强模式中的命令行自动完成操作
-set wildmenu
+"set spell spelllang=en_us
 " 使回格键（backspace）正常处理indent, eol, start等
 set backspace=2
 " 可以在buffer的任何地方使用鼠标（类似office中在工作区双击鼠标定位）
@@ -236,36 +485,14 @@ set fillchars=vert:\ ,stl:\ ,stlnc:\
 " 高亮显示匹配的括号
 set showmatch
 " 匹配括号高亮的时间（单位是十分之一秒）
-set matchtime=1
+set matchtime=5
 " 光标移动到buffer的顶部和底部时保持3行距离
-set scrolloff=3
-
-"打开文件类型检测, 加了这句才可以用智能补全
-set completeopt=longest,menu
-
-"set tags=tags
+set scrolloff=5
 set autochdir "输出时只有文件名，不带./ ../等目录前缀(默认了执行％在当前的目录下)
-set termencoding=utf-8
-set encoding=utf8
-set fileencodings=utf8,ucs-bom,gbk,cp936,gb2312,gb18030
-
-" Enable omni completion.
-autocmd FileType java setlocal omnifunc=javacomplete#Complete
-autocmd FileType cs setlocal omnifunc=OmniSharp#Complete
-autocmd FileType python set omnifunc=python3complete#Complete
-autocmd FileType JavaScript set omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
-"autocmd FileType php set omnifunc=phpcomplete#CompletePHP
-autocmd FileType c set omnifunc=ccomplete#Complete
-
-autocmd FileType vue syntax sync fromstart
-let g:vue_disable_pre_processors=1
-
-
-"把omni补全设置成tab键
-"let g:SuperTabDefaultCompletionType="<C-X><C-O>" 
+set langmenu=en_US.UTF-8
+set termencoding=UTF-8
+set encoding=UTF-8
+set fileencodings=utf-8,ucs-bom,gbk,cp936,gb2312,gb18030
 
 "在插入模式中使用Ctrl+v粘贴全局剪贴板内容
 imap <C-V> <Esc>"+gp
@@ -277,67 +504,7 @@ vnoremap <C-c> "+y
 "在Visual模式中使用Ctrl+x剪切内容到全局剪贴板
 vnoremap <C-x> "+x
 
-"三种莫模式保存
-nmap <C-S> :update<CR>
-
-"css配色插件---------------------------------------------------------------
-augroup VimCSS3Syntax
-    autocmd!
-    autocmd FileType css,html,vue setlocal iskeyword+=-
-augroup END
-let g:cssColorVimDoNotMessMyUpdatetime = 1
-
-"js加强补全----------------------------------------------------------------
-let g:vimjs#casesensistive = 1
-" Enabled by default. flip the value to make completion matches case insensitive
-let g:vimjs#smartcomplete = 0
-" Disabled by default. Enabling this will let vim complete matches at any location
-" e.g. typing 'ocument' will suggest 'document' if enabled.
-let g:vimjs#chromeapis = 0
-" Disabled by default. Toggling this will enable completion for a number of Chrome's JavaScript extension APIs
-let g:jsx_ext_required = 0 " Allow JSX in normal JS files
-
-
-"--------------------------------------------------------------------闭合html标签
-" filenames like *.xml, *.html, *.xhtml, ...
-" These are the file extensions where this plugin is enabled.
-"
-let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.js,*.jsx'
-
-" filenames like *.xml, *.xhtml, ...
-" This will make the list of non-closing tags self-closing in the specified files.
-"
-let g:closetag_xhtml_filenames = '*.xhtml,*.jsx'
-
-" filetypes like xml, html, xhtml, ...
-" These are the file types where this plugin is enabled.
-"
-let g:closetag_filetypes = 'html,xhtml,phtml,js,jsx'
-
-" filetypes like xml, xhtml, ...
-" This will make the list of non-closing tags self-closing in the specified files.
-"
-let g:closetag_xhtml_filetypes = 'xhtml,jsx'
-
-" integer value [0|1]
-" This will make the list of non-closing tags case-sensitive (e.g. `<Link>` will be closed while `<link>` won't.)
-"
-let g:closetag_emptyTags_caseSensitive = 1
-
-" Shortcut for closing tags, default is '>'
-"
-let g:closetag_shortcut = '>'
-
-" Add > at current position without closing the current tag, default is ''
-"
-let g:closetag_close_shortcut = '<leader>>'
-
-filetype plugin indent on    " required
-
-"-----------------typescript设置----------------
-let g:tsuquyomi_completion_detail = 1
-autocmd FileType typescript setlocal completeopt+=menu,preview
-let g:tsuquyomi_disable_quickfix = 1
-let g:syntastic_typescript_checkers = ['tsuquyomi'] " You shouldn't use 'tsc' checker.
-set ballooneval
-autocmd FileType typescript setlocal balloonexpr=tsuquyomi#balloonexpr()
+"闪烁光标
+set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
+            \,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor
+            \,sm:block-blinkwait175-blinkoff150-blinkon175
