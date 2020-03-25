@@ -18,28 +18,29 @@ let g:coc_global_extensions=[
             \'coc-tsserver',
             \'coc-vetur',
             \'coc-stylelint',
-            \'coc-angular'
+            \'coc-angular',
+            \'coc-word',
+            \'coc-tabnine',
+            \'coc-emoji'
             \]
-Plug 'Shougo/neco-vim'
-Plug 'neoclide/coc-neco'
+Plug 'honza/vim-snippets'
 Plug 'tomasr/molokai'
-Plug 'sickill/vim-monokai'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 Plug 'majutsushi/tagbar', {'on':'TagbarToggle'}
 Plug 'Chiel92/vim-autoformat'
 Plug 'jiangmiao/auto-pairs'
 Plug 'vim-airline/vim-airline'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
-Plug 'jreybert/vimagit'
 Plug 'tpope/vim-fugitive'
 Plug 'ryanoasis/vim-devicons'
 Plug 'Yggdroot/indentLine'
 Plug 'udalov/kotlin-vim', {'for':'kotlin'}
 Plug 'uiiaoo/java-syntax.vim', {'for':'java'}
-Plug 'othree/html5.vim',{'for':['html','vue','php','javascript']}
-Plug 'mattn/emmet-vim',{'for':['html','xml','vue','php','javascript','typescript','typescript.tsx','javascript.jsx']}
-Plug 'alvan/vim-closetag',{'for':['html','xml','vue','php','javascript','typescript','typescript.tsx','javascript.jsx']}
-Plug 'ctrlpvim/ctrlp.vim'
+Plug 'othree/html5.vim', {'for':['html','vue','php','javascript']}
+Plug 'mattn/emmet-vim', {'for':['html','xml','vue','php','javascript','typescript','typescript.tsx','javascript.jsx']}
+Plug 'alvan/vim-closetag', {'for':['html','xml','vue','php','javascript','typescript','typescript.tsx','javascript.jsx']}
 Plug 'tpope/vim-surround'
 Plug 'pangloss/vim-javascript',{'for':'javascript'}
 Plug 'othree/javascript-libraries-syntax.vim'
@@ -55,14 +56,14 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight', { 'on': 'NERDTreeToggle' }
 Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }
 Plug 'chemzqm/wxapp.vim', {'for':['wxml','wxss','js']}
 Plug 'OmniSharp/omnisharp-vim', {'for':'cs'}
-"Plug 'OrangeT/vim-csharp', {'for':'cs'}
-Plug 'w0rp/ale',{'for':'cs'}
-Plug 'posva/vim-vue',{'for':'vue'}
+Plug 'w0rp/ale', {'for':'cs'}
+Plug 'posva/vim-vue', {'for':'vue'}
 Plug 'hail2u/vim-css3-syntax'
 let g:vue_pre_processors = []
 Plug 'sheerun/vim-polyglot'
 let g:polyglot_disabled = [
             \'css',
+            \'cs',
             \'markdown',
             \'vue',
             \'html',
@@ -101,7 +102,6 @@ au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 au Syntax * RainbowParenthesesLoadChevrons
 call plug#end()
-
 "------------------------------coc.nvim---------------------------------------
 
 filetype on
@@ -380,18 +380,17 @@ map <C-L> :bp<CR>        "上一个缓冲区
 map <C-Left> :bn<CR>            "下一个缓冲区
 map <C-Right> :bp<CR>        "上一个缓冲区
 
-
 "代码格式化---------------------------------------------------------------------------------------
 noremap <F12> :syntax sync fromstart<CR>:Format<CR>
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 "前端主要使用Prettier美化
-autocmd filetype markdown,css,yaml,typescript,vue nnoremap <buffer> <F12> :Prettier<CR>
+autocmd filetype markdown,css,yaml,typescript nnoremap <buffer> <F12> :Prettier<CR>
 "编译型
-autocmd filetype cs,c,cpp noremap <buffer> <F12> :Autoformat<CR>
+autocmd filetype cs,c,cpp,kotlin,sh noremap <buffer> <F12> :Autoformat<CR>
 
 "常用快捷键---------------------------------------------------------------------------------------
-"去空行  
-nnoremap <F2> :g/^\s*$/d<CR> 
+"去空行，去行尾空格
+nnoremap <F2> :g/^\s*$/d<CR>:g/\s\+$/s<CR>
 "html标签自动补全
 map! <C-O> <C-Y>,
 "列出当前目录文件  
@@ -503,6 +502,49 @@ vnoremap <C-c> "+y
 
 "在Visual模式中使用Ctrl+x剪切内容到全局剪贴板
 vnoremap <C-x> "+x
+
+"
+"fzf-----------------------------------------------------------------------
+function! s:fzf_statusline()
+  " Override statusline as you like
+  highlight fzf1 ctermfg=161 ctermbg=251
+  highlight fzf2 ctermfg=23 ctermbg=251
+  highlight fzf3 ctermfg=237 ctermbg=251
+  setlocal statusline=%#fzf1#\ >\ %#fzf2#fz%#fzf3#f
+endfunction
+
+autocmd! User FzfStatusLine call <SID>fzf_statusline()
+" [Buffers] Jump to the existing window if possible
+let g:fzf_buffers_jump = 1
+" [[B]Commits] Customize the options used by 'git log':
+let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"'
+" [Tags] Command to generate tags file
+let g:fzf_tags_command = 'ctags -R'
+" [Commands] --expect expression for directly executing the command
+let g:fzf_commands_expect = 'alt-enter,ctrl-x'
+" Mapping selecting mappings
+nmap <leader><tab> <plug>(fzf-maps-n)
+xmap <leader><tab> <plug>(fzf-maps-x)
+omap <leader><tab> <plug>(fzf-maps-o)
+
+" Insert mode completion
+imap <c-x><c-w> <plug>(fzf-complete-word)
+imap <c-x><c-p> <plug>(fzf-complete-path)
+imap <c-x><c-f> <plug>(fzf-complete-file-ag)
+imap <c-x><c-l> <plug>(fzf-complete-line)
+nmap <C-F> :Files<CR>
+nmap <C-P> :Files<CR>
+nmap ff :Files<CR>
+imap <C-P> <Esc>:Files<CR>
+nmap <C-B> :Buffers<CR>
+nmap fb :Buffers<CR>
+imap <C-B> <Esc>:Buffers<CR>
+nmap <C-T> :Tags<CR>
+nmap ft :Tags<CR>
+let g:fzf_action = { 'ctrl-b': 'edit' }
+
+" Advanced customization using Vim function
+inoremap <expr> <c-x><c-w> fzf#vim#complete#word({'right': '20%'})
 
 "闪烁光标
 set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
