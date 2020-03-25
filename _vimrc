@@ -103,50 +103,39 @@ au Syntax * RainbowParenthesesLoadBraces
 au Syntax * RainbowParenthesesLoadChevrons
 call plug#end()
 "------------------------------coc.nvim---------------------------------------
-
 filetype on
-
 autocmd CursorHold * silent call CocActionAsync('highlight')
-
 set hidden
 set cmdheight=2
 set updatetime=300
 set shortmess+=c
 set signcolumn=yes
-
 inoremap <silent><expr> <TAB>
             \ pumvisible() ? "\<C-n>" :
             \ <SID>check_back_space() ? "\<TAB>" :
             \ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
 function! s:check_back_space() abort
     let col = col('.') - 1
     return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
-
 " Use <c-space> to trigger completion.
 inoremap <silent><expr> <c-space> coc#refresh()
-
 " Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
 " Coc only does snippet and additional edit on confirm.
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 " Or use `complete_info` if your vim support it, like:
 " inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
-
 " Use `[g` and `]g` to navigate diagnostics
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
-
 " Remap keys for gotos
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
-
 " Use K to show documentation in preview window
 nnoremap <silent> K :call <SID>show_documentation()<CR>
-
 function! s:show_documentation()
     if (index(['vim','help'], &filetype) >= 0)
         execute 'h '.expand('<cword>')
@@ -154,7 +143,6 @@ function! s:show_documentation()
         call CocAction('doHover')
     endif
 endfunction
-
 " Highlight symbol under cursor on CursorHold
 autocmd CursorHold * silent call CocActionAsync('highlight')
 " Remap for rename current word
@@ -162,7 +150,6 @@ nmap <leader>rn <Plug>(coc-rename)
 " Remap for format selected region
 xmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
-
 augroup mygroup
     autocmd!
     " Setup formatexpr specified filetype(s).
@@ -170,38 +157,29 @@ augroup mygroup
     " Update signature help on jump placeholder
     autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
-
 " Remap for do codeAction of selected region, ex: `<leader>aap` for current paragraph
 xmap <leader>a  <Plug>(coc-codeaction-selected)
 nmap <leader>a  <Plug>(coc-codeaction-selected)
-
 " Remap for do codeAction of current line
 nmap <leader>ac  <Plug>(coc-codeaction)
 " Fix autofix problem of current line
 nmap <leader>qf  <Plug>(coc-fix-current)
-
 " Create mappings for function text object, requires document symbols feature of languageserver.
 xmap if <Plug>(coc-funcobj-i)
 xmap af <Plug>(coc-funcobj-a)
 omap if <Plug>(coc-funcobj-i)
 omap af <Plug>(coc-funcobj-a)
-
 " Use <TAB> for select selections ranges, needs server support, like: coc-tsserver, coc-python
 nmap <silent> <TAB> <Plug>(coc-range-select)
 xmap <silent> <TAB> <Plug>(coc-range-select)
-
 " Use `:Format` to format current buffer
 command! -nargs=0 Format :call CocAction('format')
-
 " Use `:Fold` to fold current buffer
 command! -nargs=? Fold :call     CocAction('fold', <f-args>)
-
 " use `:OR` for organize import of current buffer
 command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
-
 " Add status line support, for integration with other plugin, checkout `:h coc-status`
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
-
 " Using CocList
 " Show all diagnostics
 nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>
@@ -219,7 +197,6 @@ nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
-
 "------------------------------coc.nvim---------------------------------------------
 "
 "
@@ -235,7 +212,6 @@ let g:OmniSharp_timeout = 5
 " one (so the preview documentation is accessible). Remove 'preview' if you
 " don't want to see any documentation whatsoever.
 set completeopt=longest,menuone,preview
-
 " Fetch full documentation during omnicomplete requests.
 " By default, only Type/Method signatures are fetched. Full documentation can
 " still be fetched when you need it with the :OmniSharpDocumentation command.
@@ -243,57 +219,44 @@ let g:omnicomplete_fetch_full_documentation = 1
 set previewheight=5
 " Tell ALE to use OmniSharp for linting C# files, and no other linters.
 let g:ale_linters = { 'cs': ['OmniSharp'] }
-
 augroup omnisharp_commands
     autocmd!
-
     " Show type information automatically when the cursor stops moving.
     " Note that the type is echoed to the Vim command line, and will overwrite
     " any other messages in this space including e.g. ALE linting messages.
     autocmd CursorHold *.cs OmniSharpTypeLookup
-
     " The following commands are contextual, based on the cursor position.
     autocmd FileType cs nnoremap <buffer> gd :OmniSharpGotoDefinition<CR>
     autocmd FileType cs nnoremap <buffer> <Leader>fi :OmniSharpFindImplementations<CR>
     autocmd FileType cs nnoremap <buffer> <Leader>fs :OmniSharpFindSymbol<CR>
     autocmd FileType cs nnoremap <buffer> <Leader>fu :OmniSharpFindUsages<CR>
-
     " Finds members in the current buffer
     autocmd FileType cs nnoremap <buffer> <Leader>fm :OmniSharpFindMembers<CR>
-
     autocmd FileType cs nnoremap <buffer> <Leader>fx :OmniSharpFixUsings<CR>
     autocmd FileType cs nnoremap <buffer> <Leader>tt :OmniSharpTypeLookup<CR>
     autocmd FileType cs nnoremap <buffer> <Leader>dc :OmniSharpDocumentation<CR>
     autocmd FileType cs nnoremap <buffer> <C-\> :OmniSharpSignatureHelp<CR>
     autocmd FileType cs inoremap <buffer> <C-\> <C-o>:OmniSharpSignatureHelp<CR>
-
     " Navigate up and down by method/property/field
     autocmd FileType cs nnoremap <buffer> <C-k> :OmniSharpNavigateUp<CR>
     autocmd FileType cs nnoremap <buffer> <C-j> :OmniSharpNavigateDown<CR>
-
     " Find all code errors/warnings for the current solution and populate the quickfix window
     autocmd FileType cs nnoremap <buffer> <Leader>cc :OmniSharpGlobalCodeCheck<CR>
 augroup END
-
 " Contextual code actions (uses fzf, CtrlP or unite.vim when available)
 nnoremap <Leader><Space> :OmniSharpGetCodeActions<CR>
 " Run code actions with text selected in visual mode to extract method
 xnoremap <Leader><Space> :call OmniSharp#GetCodeActions('visual')<CR>
-
 " Rename with dialog
 nnoremap <Leader>nm :OmniSharpRename<CR>
 nnoremap <F2> :OmniSharpRename<CR>
 " Rename without dialog - with cursor on the symbol to rename: `:Rename newname`
 command! -nargs=1 Rename :call OmniSharp#RenameTo("<args>")
-
 nnoremap <Leader>cf :OmniSharpCodeFormat<CR>
-
 " Start the omnisharp server for the current solution
 nnoremap <Leader>ss :OmniSharpStartServer<CR>
 nnoremap <Leader>sp :OmniSharpStopServer<CR>
-
 "-----------------------------omnisharp--------------------------------------------------
-
 "vim基础设置-----------------------------------------------------------------------------
 if has("gui_running")
     au GUIEnter * simalt ~x " 窗口启动时自动最大化
@@ -304,7 +267,6 @@ if has("gui_running")
     set guioptions-=b " 隐藏底部滚动条
     set showtabline=0 " 隐藏Tab栏
 endif
-
 syntax enable
 set sw=4
 set ts=4
@@ -322,17 +284,16 @@ set re=1
 set lazyredraw
 set synmaxcol=0
 set t_Co=256
-
 "-------------------显示相关---------------------------------------
 set cul "高亮光标所在行
 set cuc
-color molokai     " 设置背景主题  
-set ruler           " 显示标尺  
-set showcmd         " 输入的命令显示出来，看的清楚些  
-set scrolloff=2     " 光标移动到buffer的顶部和底部时保持3行距离  
-set laststatus=2   " 启动显示状态行(1),总是显示状态行(2)  
-"set foldenable      " 允许折叠  
-"set foldmethod=manual   " 手动折叠  
+color molokai     " 设置背景主题
+set ruler           " 显示标尺
+set showcmd         " 输入的命令显示出来，看的清楚些
+set scrolloff=2     " 光标移动到buffer的顶部和底部时保持3行距离
+set laststatus=2   " 启动显示状态行(1),总是显示状态行(2)
+"set foldenable      " 允许折叠
+"set foldmethod=manual   " 手动折叠
 set cursorline              " 突出显示当前行
 set magic                   " 设置魔术
 " 自动缩进
@@ -350,7 +311,6 @@ set smarttab
 " 显示行号
 set number
 set showmode
-
 " 历史记录数
 set history=1000
 "搜索逐字符高亮
@@ -364,12 +324,8 @@ set cmdheight=1
 set viminfo+=!
 " 带有如下符号的单词不要被换行分割
 set iskeyword+=$,@,%,#,-,_
-
 set guifont=CodeNewRoman_NF:h14
-
 filetype plugin on
-
-
 "tab, buffer快捷键配置----------------------------------------------------------------------------
 map <S-H> :tabp<CR>
 map <S-L> :tabn<CR>
@@ -393,17 +349,14 @@ autocmd filetype cs,c,cpp,kotlin,sh noremap <buffer> <F12> :Autoformat<CR>
 nnoremap <F2> :g/^\s*$/d<CR>:g/\s\+$/s<CR>
 "html标签自动补全
 map! <C-O> <C-Y>,
-"列出当前目录文件  
+"列出当前目录文件
 nmap <F3> :NERDTreeToggle<CR>
 "tagbar
 nmap <F9> :TagbarToggle<CR>
-
 "按F5保存
 nmap <F5> :syntax sync fromstart<CR>:w<CR>
-
 "按F6编译运行
 nmap <F6> :syntax sync fromstart<CR>:call Compile()<CR>
-
 func! Compile()
     exec "w"
     if &filetype == 'c'
@@ -429,16 +382,13 @@ func! Compile()
         exec "!time php %"
     endif
 endfunc
-
 "C,C++的调试
-
 map <F8> :call Rungdb()<CR>
 func! Rungdb()
     exec "w"
     exec "!g++ % -g -o %<"
     exec "!gdb ./%<"
 endfunc
-
 "实用配置------------------------------------------------------------------------------
 " 只剩 NERDTree时自动关闭
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
@@ -458,13 +408,11 @@ set confirm
 "禁止自动分行
 set wrap
 set linebreak
-
 "禁止生成临时文件
 set noundofile
 set nobackup
 set nowritebackup
 set noswapfile
-
 "搜索忽略大小写
 set ignorecase
 set smartcase
@@ -479,8 +427,7 @@ set selectmode=mouse,key
 " 通过使用: commands命令，告诉我们文件的哪一行被改变过
 set report=0
 " 在被分割的窗口间显示空白，便于阅读
-set fillchars=vert:\ ,stl:\ ,stlnc:\ 
-
+set fillchars=vert:\ ,stl:\ ,stlnc:\
 " 高亮显示匹配的括号
 set showmatch
 " 匹配括号高亮的时间（单位是十分之一秒）
@@ -492,14 +439,11 @@ set langmenu=en_US.UTF-8
 set termencoding=UTF-8
 set encoding=UTF-8
 set fileencodings=utf-8,ucs-bom,gbk,cp936,gb2312,gb18030
-
 "在插入模式中使用Ctrl+v粘贴全局剪贴板内容
 imap <C-V> <Esc>"+gp
 nmap <C-V> "+gp
-
 "在Visual模式中使用Ctrl+c复制内容到全局剪贴板
 vnoremap <C-c> "+y
-
 "在Visual模式中使用Ctrl+x剪切内容到全局剪贴板
 vnoremap <C-x> "+x
 
