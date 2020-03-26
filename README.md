@@ -12,15 +12,15 @@ A powerful vim config file, make your vim like a simple IDE, it is especially su
 
 ## Stop Updating For Linux
 
-I am so sorry that I have changed my editor from Vim to NeoVim
+I am so sorry that I have changed my editor from Vim to NeoVim on my Ubuntu.
 
 Vimmer will also be replaced by NVimmer and then stop Updating on Linux.
 
-I recommend NeoVim, especially on Linux, please use NVimmer to config your NeoVim.
+I recommend NeoVim, please use [NVimmer](https://github.com/devilyouwei/NVimmer) to config your NeoVim.
 
 [https://github.com/devilyouwei/NVimmer](https://github.com/devilyouwei/NVimmer)
 
-The good news is that Vimmer supports Windows Gvim! Because NeoVim still not stable on Windows OS.
+Still, Vimmer supports Windows Gvim! Because NeoVim still not stable on Windows OS.
 
 ## Languages Support
 
@@ -35,41 +35,54 @@ The good news is that Vimmer supports Windows Gvim! Because NeoVim still not sta
 9. json
 10. react jsx/tsx
 11. kotlin (weak)
+12. react jsx/tsx/js
+13. emoji
+14. English words 10k+
 
 ## Quick start
 
-1. Clone this project to local
+### Install Gvim
+
+Install the [Gvim](https://github.com/vim/vim-win32-installer/releases), they are compiled with Python, Lua, Ruby and so on. You need these supports.
+
+### Clone the repo
 
 ```bash
 git clone https://github.com/devilyouwei/Vimmer.git
 ```
 
-2. Copy config file '.vimrc'(Linux), '\_vimrc' and 'vimfiles'(Windows) to your user home directory. Linux is '~', in windows, it is your username folder in 'C:/Users/'
-3. Copy '.eslintrc.json' and '.prettierrc.json' to user directory if you need eslint to check your front-end code and use prettier to format your code.
-4. Install node js, refer to node offcial website. [https://nodejs.org](https://nodejs.org)
-5. Install the fonts in '/fonts', Windows move the fonts to 'C:\windows\Fonts\', Linux just double click the font.
-6. Install [vim-plug](https://github.com/junegunn/vim-plug). In windows, vimfiles has contained vim-plug so you don't need to install it.
-7. Open vim or windows gvim execute :PlugInstall
-8. If you want to use eslint to check your js code, you need to execute the following cmd to install eslint.
+### Basic Configuration
+
+1. Copy config file '.vimrc'(Linux), '\_vimrc' and 'vimfiles'(Windows) to your user home directory. Linux is '~', on Windows, it is your username folder in 'C:/Users/'
+2. Copy '.eslintrc.json' and '.prettierrc.json' to user directory if you need eslint to check your front-end code and use prettier to format your code.
+3. Install Nodejs [https://nodejs.org](https://nodejs.org)
+4. Install the fonts in '/fonts', Windows move the fonts to 'C:\windows\Fonts\', Linux just double click the font.
+5. Install [vim-plug](https://github.com/junegunn/vim-plug). In windows, vimfiles has contained vim-plug so you don't need to install it.
+6. Open vim or windows gvim execute `:PlugInstall`
+7. If you want to use eslint to check your js code, you need to execute the following cmd to install eslint.
    (Mention: In the home directory, '.eslintrc.json' is a global eslint config file. It can be covered by local eslintrc or package.json file in a project.)
+
+### Install Supporting Tools
+
+Install ESLint:
 
 ```bash
 npm install -g eslint
 ```
 
-9. Install ctags directly, if you are using ubuntu.
+If you are using Linux Ubuntu
 
 ```bash
-// tagbar need ctags, autoformat need astyle
+# tagbar need ctags, autoformat need astyle
 sudo apt install ctags
 sudo apt install astyle
 ```
 
-Windows need you to download ctags and add to PATH environment.
+If you are using Windows
 
-It's easy, right?
+-   You need to download [Ctags](http://ctags.sourceforge.net/) and [Astyle](https://sourceforge.net/projects/astyle/) manually, then add them to PATH environment.
 
-Open vim and 👀 look look.
+-   You need to install [Perl](http://strawberryperl.com/)
 
 ## Issues
 
@@ -97,6 +110,9 @@ sudo apt install vim-nox
 -   Auto completion: COC auto completion plug-in, press tab to auto complete
 -   Buffer switch: Ctrl + H, Ctrl + L, Ctrl + left, Ctrl + right
 -   Tab switch: as above, change Ctrl to shift
+-   Find tags, includeing functions, class globally, press: Ctrl-T or ft
+-   Find buffers, press: Ctrl-B or fb
+-   Find files in current path, press: Ctrl-F or Ctrl-P or ff
 
 ## Examples
 

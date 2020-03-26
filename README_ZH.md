@@ -1,6 +1,6 @@
 ![logo](./example/logo.png)
 
-Windows Gvim 持续更新中......
+Windows **Gvim** 持续更新中......
 
 # Vimmer
 
@@ -37,10 +37,17 @@ Windows Gvim 持续更新中......
 9. json
 10. react jsx/tsx
 11. kotlin
+12. react jsx/tsx/js
+13. emoji
+14. English words 10k+
 
 ## 开始安装
 
--   克隆项目到本地
+### 安装 Gvim
+
+安装 [Gvim](https://github.com/vim/vim-win32-installer/releases), 这个版本支持 Python, Lua, Ruby 等等。
+
+### 克隆项目
 
 ```bash
 git clone https://github.com/devilyouwei/Vimmer.git
@@ -57,12 +64,12 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 
 3.  复制 .eslintrc.json 和 .prettierrc.json 到用户目录，eslint 检查代码，prettier 可以格式化各种前端代码
 
-4.  安装 nodejs，详细参考 node 官网
+4.  安装 nodejs，[https://nodejs.org](https://nodejs.org)
 5.  安装字体，字体在 fonts 目录下，windows 直接移动字体到'C:\windows\Fonts\'，ubuntu 可以双击安装
-6.  打开 vim 或 Windows gvim。使用:PlugInstall 命令安装所有插件
+6.  打开 vim 或 Windows gvim。使用`:PlugInstall` 命令安装所有插件
 7.  JS 代码检查需要安装 eslint
 
-    （注意，如果项目目录下也有 eslintrc 或者 package 配置文件，将会覆盖用户目录下的全局 eslint 配置文件，vim 将自动使用项目目录下的 eslint 配置，这很合理）
+    （注意，如果项目目录下也有 eslintrc 或者 package 等配置文件，将会覆盖用户目录下的全局 eslint 配置文件，vim 将自动使用项目目录下的 eslint 配置，这很合理）
 
 ```bash
 npm install -g eslint
@@ -75,6 +82,14 @@ npm install -g eslint
 sudo apt install ctags
 sudo apt install astyle
 ```
+
+Windows 安装如下软件，并且将 bin 添加到环境变量中，以便终端可以调用
+
+-   [Ctags](http://ctags.sourceforge.net/)
+
+-   [Astyle](https://sourceforge.net/projects/astyle/)
+
+-   [Perl](http://strawberryperl.com/)
 
 很简单吧，打开 vim👀 看看有什么不一样。
 
@@ -108,6 +123,9 @@ Winodws gvim 下，建议安装 fonts 下的 windows 下的 CodeNewRomanNerd
 -   自动补全：tab 键
 -   Ctrl-左右键，或者 H，L 键，切换 tab
 -   shift-左右键，或者 H，L 键，切换 buffer
+-   标签全局搜索，可以搜索全局搜索函数，类，变量定义等，normal 模式下, 按: Ctrl-T 或 ft
+-   搜索 buffers, normal 模式下, 按: Ctrl-B 或 fb
+-   搜索当前路径下的文件, normal 模式下, 按: Ctrl-F or Ctrl-P 或 ff
 
 ## Examples
 
