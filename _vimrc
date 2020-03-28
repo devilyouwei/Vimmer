@@ -26,7 +26,6 @@ let g:coc_global_extensions=[
             \'coc-emoji'
             \]
 Plug 'honza/vim-snippets'
-Plug 'voldikss/vim-floaterm'
 Plug 'tomasr/molokai'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
