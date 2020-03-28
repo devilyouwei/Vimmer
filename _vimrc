@@ -398,7 +398,9 @@ nnoremap <F2> :g/^\s*$/d<CR>:g/\s\+$/s<CR>
 map! <C-O> <C-Y>,
 "列出当前目录文件
 nmap <F3> :NERDTreeToggle<CR>
-nmap <F4> :FloatermToggle<CR>
+set splitbelow
+set termwinsize=10x0
+nmap <F4> :ter<CR>
 "tagbar
 nmap <F9> :TagbarToggle<CR>
 
