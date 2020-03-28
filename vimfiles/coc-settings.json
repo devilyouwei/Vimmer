@@ -28,6 +28,7 @@
     "html.validate.html": true,
     "html.validate.styles": true,
     "html.validate.scripts": true,
+    "html.format.indentInnerHtml": true,
     "html.format.wrapLineLength": 100,
     "html.format.endWithNewline": false,
     "html.format.wrapAttributes": "auto",
@@ -51,7 +52,7 @@
     //eslint,js
     "eslint.autoFix": true,
     "eslint.autoFixOnSave": true,
-    "eslint.filetypes": ["javascript", "javascriptreact", "javascript.jsx", "html"],
+    "eslint.filetypes": ["javascript", "javascriptreact", "javascript.jsx"],
     "eslint.run": "onType",
 
     //java

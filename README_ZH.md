@@ -47,13 +47,15 @@ Windows **Gvim** 持续更新中......
 
 安装 [Gvim](https://github.com/vim/vim-win32-installer/releases), 这个版本支持 Python, Lua, Ruby 等等。
 
+建议安装 signed 版本！
+
 ### 克隆项目
 
 ```bash
 git clone https://github.com/devilyouwei/Vimmer.git
 ```
 
-1.  复制.vimrc 到用户目录，Linux 是 '/home/username/.vimrc' or '~/', Windows 是 'c:\Users' 下的自己用户名的目录
+1.  复制'.vimrc' 或 '\_vimrc' 到用户目录，Linux 是 '~/.vimrc', Windows 是 'c:\Users\用户名\\\_vimrc'
 2.  复制 vimfiles 到 windows 的用户目录下，里面已经包含了 vim-plug 插件
     Linux 执行如下命令安装 vim-plug
 
@@ -119,6 +121,7 @@ Winodws gvim 下，建议安装 fonts 下的 windows 下的 CodeNewRomanNerd
 -   格式化代码：F12
 -   去除所有空行：F2
 -   召唤树状目录：F3
+-   召唤终端：F4
 -   召唤 tagbar：F9
 -   自动补全：tab 键
 -   Ctrl-左右键，或者 H，L 键，切换 tab

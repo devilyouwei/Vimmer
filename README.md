@@ -45,6 +45,8 @@ Still, Vimmer supports Windows Gvim! Because NeoVim still not stable on Windows 
 
 Install the [Gvim](https://github.com/vim/vim-win32-installer/releases), they are compiled with Python, Lua, Ruby and so on. You need these supports.
 
+Signed version is recommended!
+
 ### Clone the repo
 
 ```bash
@@ -53,7 +55,7 @@ git clone https://github.com/devilyouwei/Vimmer.git
 
 ### Basic Configuration
 
-1. Copy config file '.vimrc'(Linux), '\_vimrc' and 'vimfiles'(Windows) to your user home directory. Linux is '~', on Windows, it is your username folder in 'C:/Users/'
+1. Copy config file '.vimrc'(Linux), '\_vimrc'(Windows) and 'vimfiles'(Windows) to your user home directory. Linux is '~/.vimrc', on Windows, it is your username folder in 'C:/Users/Your Username/\_vimrc'
 2. Copy '.eslintrc.json' and '.prettierrc.json' to user directory if you need eslint to check your front-end code and use prettier to format your code.
 3. Install Nodejs [https://nodejs.org](https://nodejs.org)
 4. Install the fonts in '/fonts', Windows move the fonts to 'C:\windows\Fonts\', Linux just double click the font.
@@ -106,6 +108,7 @@ sudo apt install vim-nox
 -   Format code: F12 (style, jsbeautify required)
 -   Clear blank lines: F2
 -   Open current directory file tree: F3
+-   Open Terminal In Vim: F4
 -   Open tagbar: F9 (ctags required)
 -   Auto completion: COC auto completion plug-in, press tab to auto complete
 -   Buffer switch: Ctrl + H, Ctrl + L, Ctrl + left, Ctrl + right
