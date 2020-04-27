@@ -24,6 +24,7 @@ let g:coc_global_extensions=[
             \'coc-emoji'
             \]
 Plug 'honza/vim-snippets'
+"Plug 'voldikss/vim-floaterm'
 Plug 'tomasr/molokai'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -245,7 +246,7 @@ set selection=inclusive
 set wildmenu
 set mousemodel=popup
 set termguicolors
-set re=1
+"set re=1
 set lazyredraw
 set synmaxcol=0
 set t_Co=256
@@ -293,6 +294,7 @@ set viminfo+=!
 set iskeyword+=$,@,%,#,-,_
 
 set guifont=CodeNewRoman_NF:h14
+set guifontwide="微软雅黑":h14
 
 filetype plugin on
 
@@ -324,7 +326,8 @@ map! <C-O> <C-Y>,
 nmap <F3> :NERDTreeToggle<CR>
 set splitbelow
 set termwinsize=10x0
-nmap <F4> :ter<CR>
+let g:floaterm_keymap_toggle = '<F4>'
+noremap <F4> :ter<CR>
 "tagbar
 nmap <F9> :TagbarToggle<CR>
 
@@ -471,7 +474,7 @@ nmap ft :Tags<CR>
 let g:fzf_action = { 'ctrl-b': 'edit' }
 
 " Advanced customization using Vim function
-inoremap <expr> <c-x><c-w> fzf#vim#complete#word({'right': '20%'})
+inoremap <expr> <c-x><c-w> fzf#vim#complete#word({'right': '19%'})
 
 " Find Nearest
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
