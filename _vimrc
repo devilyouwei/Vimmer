@@ -24,7 +24,7 @@ let g:coc_global_extensions=[
             \'coc-emoji'
             \]
 Plug 'honza/vim-snippets'
-"Plug 'voldikss/vim-floaterm'
+Plug 'voldikss/vim-floaterm'
 Plug 'tomasr/molokai'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -324,10 +324,10 @@ nnoremap <F2> :g/^\s*$/d<CR>:g/\s\+$/s<CR>
 map! <C-O> <C-Y>,
 "列出当前目录文件
 nmap <F3> :NERDTreeToggle<CR>
-set splitbelow
-set termwinsize=10x0
+"set splitbelow
+"set termwinsize=10x0
+"noremap <F4> :ter<CR>
 let g:floaterm_keymap_toggle = '<F4>'
-noremap <F4> :ter<CR>
 "tagbar
 nmap <F9> :TagbarToggle<CR>
 
