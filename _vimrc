@@ -34,7 +34,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'vim-airline/vim-airline'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
-Plug 'tpope/vim-fugitive'
+"Plug 'tpope/vim-fugitive'
 Plug 'ryanoasis/vim-devicons'
 Plug 'Yggdroot/indentLine'
 Plug 'udalov/kotlin-vim', {'for':'kotlin'}
@@ -54,7 +54,7 @@ Plug 'vim-scripts/matchit.zip'
 Plug 'leshill/vim-json', {'for':'json'}
 Plug 'scrooloose/nerdtree'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'Xuyuanp/nerdtree-git-plugin'
+"Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'chemzqm/wxapp.vim', {'for':['wxml','wxss','js']}
 Plug 'posva/vim-vue', {'for':'vue'}
 Plug 'hail2u/vim-css3-syntax'
