@@ -1,60 +1,76 @@
 {
     //tsserver
-    "javascript.validate.enable": false, //use eslint to check js
+    //use eslint to check js and ts
+    "tsserver.trace.server": "verbose",
+    "javascript.validate.enable": false,
+    "typescript.validate.enable": false,
+
+    //emmet
+    "emmet.priority": 1,
+    "emmet.excludeLanguages": [
+        "vue"
+    ],
+
+    //prettier
+    "prettier.useTabs": false,
+    "prettier.tabWidth": 4,
+    "prettier.semi": false,
+    "prettier.singleQuote": true,
+    "prettier.jsxBracketSameLine": true,
+    "prettier.printWidth": 120,
+    "prettier.jsxSingleQuote": false,
+    "prettier.bracketSpacing": true,
+    "prettier.trailingComma": "none",
+    "prettier.arrowParens": "avoid",
+    "prettier.htmlWhitespaceSensitivity": "ignore",
+    "prettier.proseWrap": "always",
 
     //vue
+    "vetur.trace.server": "verbose",
     "vetur.format.enable": true,
-    "vetur.format.options.tabSize": 4,
-    "vetur.format.options.useTabs": false,
     "vetur.validation.style": true,
     "vetur.validation.script": true,
     "vetur.validation.template": true,
-    "vetur.format.defaultFormatter.html": "prettyhtml",
     "vetur.format.defaultFormatterOptions": {
         "prettyhtml": {
-            "printWidth": 100,
+            "sortAttributes": true,
             "singleQuote": false,
-            "wrapAttributes": false,
-            "sortAttributes": true
+            "printWidth": 120
         }
     },
+    "vetur.format.defaultFormatter.js": "prettier-eslint",
+    "vetur.format.defaultFormatter.html": "prettier",
+    "vetur.format.defaultFormatter.css": "prettier",
+    "vetur.format.defaultFormatter.less": "prettier",
+    "vetur.format.defaultFormatter.scss": "prettier",
+    "vetur.format.defaultFormatter.ts": "prettier-tslint",
+    "vetur.format.defaultFormatter.stylus": "stylus-supremacy",
+    "vetur.format.defaultFormatter.postcss": "prettier",
 
     //json
     "json.format.enable": false,
 
     //html
+    "html.trace.server": "verbose",
     "html.enable": true,
     "html.format.enable": true,
     "html.validate.html": true,
     "html.validate.styles": true,
     "html.validate.scripts": true,
-    "html.format.indentInnerHtml": true,
     "html.format.wrapLineLength": 100,
     "html.format.endWithNewline": false,
     "html.format.wrapAttributes": "auto",
 
-    //prettier
-    //"prettier.formatterPriority": -1,
-    "prettier.semi": false,
-    "prettier.useTabs": false,
-    "prettier.printWidth": 100,
-    "prettier.tabWidth": 4,
-    "prettier.singleQuote": true,
-    "prettier.trailingComma": "none",
-    "prettier.jsxSingleQuote": false,
-    "prettier.jsxBracketSameLine": true,
-
-    //emmet
-    "emmet.includeLanguages": {
-        "javascript": "javascriptreact"
-    },
-
     //eslint,js
+    "eslint.trace.server": "verbose",
+    "eslint.packageManager": "yarn",
+    "prettier.eslintIntegration": true,
     "eslint.autoFix": true,
     "eslint.autoFixOnSave": true,
-    "eslint.filetypes": ["javascript", "javascriptreact", "javascript.jsx"],
-    "eslint.run": "onType",
+    "eslint.filetypes": ["javascript", "javascriptreact", "typescriptreact", "vue", "typescript"],
+    "eslint.run": "onSave",
 
     //java
+    "java.trace.server": "verbose",
     "java.errors.incompleteClasspath.severity": "ignore"
 }
